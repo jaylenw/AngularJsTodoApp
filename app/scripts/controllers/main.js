@@ -34,6 +34,15 @@ angular.module('todoApp')
           taskCompleted: false
         }];
 
+        var note = {
+          title: "test",
+          text: "test",
+          taskCompleted: false
+        };
 
+        //add note to todoList
+        $scope.addNote = function(){
+            $scope.todoList.push(note);
+        };
 
   });//end of controller

@@ -65,17 +65,21 @@
             <form>
               <div class="form-group">
                 <label>Title</label>
-                <input type="title" class="form-control" id="titleInput" placeholder="Title">
+                <input type="title" ng-model="newTitle" class="form-control" id="titleInput" placeholder="Title">
               </div>
               <div class="form-group">
                 <label>Text</label>
-                <input type="textarea" class="form-control" id="textInput" placeholder="Text">
+                <input type="textarea" ng-model="newText" class="form-control" id="textInput" placeholder="Text">
               </div>
-              <button type="submit" class="btn btn-default">Save</button>
+              <button type="submit" ng-click="addNote()" class="btn btn-default">Save</button>
             </form>
          </div>
          <div class="row">
-           <div class="col-xs-6 col-lg-4" ng-repeat="note in todoList">
+           <div class="col-xs-6 col-lg-4">
+              <h2>{{newTitle}}</h2>
+              <p>{{newText}}</p>
+            </div><!--/.col-xs-6.col-lg-4-->
+           <div class="col-xs-6 col-lg-4" ng-repeat="note in todoList track by $index">
               <h2>{{note.title}}</h2>
               <p>{{note.text}}</p>
             </div><!--/.col-xs-6.col-lg-4-->
