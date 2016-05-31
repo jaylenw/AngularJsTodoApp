@@ -34,15 +34,28 @@ angular.module('todoApp')
           taskCompleted: false
         }];
 
-        var note = {
-          title: "test",
-          text: "test",
+      //Initializing a blank note for ng-model in jumbotron of index.html
+        $scope.note = {
+          title: "",
+          text: "",
           taskCompleted: false
         };
 
         //add note to todoList
-        $scope.addNote = function(){
-            $scope.todoList.push(note);
+        $scope.addNote = function(noteTitle, noteText){
+          //create temp note
+          var note = {
+            title: noteTitle,
+            text: noteText,
+            taskCompleted: false
+          };
+          //push temp note to todoList
+          $scope.todoList.push(note);
+          //reset $scope.note to init values
+          $scope.note.title = "";
+          $scope.note.text = "";
+          $scope.note.taskCompleted = false;
+
         };
 
   });//end of controller
