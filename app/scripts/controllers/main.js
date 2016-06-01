@@ -21,24 +21,28 @@ angular.module('todoApp')
         {
           title: "Note A",
           text: "Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. ",
-          taskCompleted: true
+          taskCompleted: true,
+          date: "Today at 7:48"
         },
         {
           title: "Note B",
           text: "Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. ",
-          taskCompleted: false
+          taskCompleted: false,
+          date: "Today at 7:48"
         },
         {
           title: "Note C",
           text: "Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. ",
-          taskCompleted: false
+          taskCompleted: false,
+          date: "Today at 7:48"
         }];
 
       //Initializing a blank note for ng-model in jumbotron of index.html
         $scope.note = {
           title: "",
           text: "",
-          taskCompleted: false
+          taskCompleted: false,
+          date: ""
         };
 
         //add note to todoList
@@ -47,7 +51,9 @@ angular.module('todoApp')
           var note = {
             title: noteTitle,
             text: noteText,
-            taskCompleted: false
+            taskCompleted: false,
+            date: moment().calendar() //moment uses moment.js
+            //Today at 7:48
           };
           //push temp note to todoList
           $scope.todoList.push(note);
@@ -55,6 +61,10 @@ angular.module('todoApp')
           $scope.note.title = "";
           $scope.note.text = "";
           $scope.note.taskCompleted = false;
+        };
+
+        //deleting selected note from todoList
+        $scope.removeNote = function(){
 
         };
 
