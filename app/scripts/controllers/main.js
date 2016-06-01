@@ -88,4 +88,9 @@ angular.module('todoApp')
           }
         };
 
+        //setting taskCompleted attribute to completed
+        $scope.markCompleted = function(note) {
+          note.taskCompleted = true;
+        };
+
   });//end of controller
