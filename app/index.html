@@ -81,6 +81,8 @@
               <h2>{{note.title}}</h2>
               <p><strong><em>{{note.date}}</em></strong></p>
               <p>{{note.text}}</p>
+              <button type="button" ng-show="note.taskCompleted" ng-click="archiveNote(note)" class="btn btn-success">Completed, click to add to archive</button>
+              <button type="button" ng-show="!note.taskCompleted" class="btn btn-warning">Not completed, click to mark completed</button>
             </div><!--/.col-xs-6.col-lg-4-->
            <div class="col-xs-6 col-lg-4">
              <h2>Heading</h2>
