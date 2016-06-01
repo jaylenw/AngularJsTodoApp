@@ -10,6 +10,7 @@
 angular.module('todoApp')
   .controller('archiveCtrl', function ($scope) {
 
+    //making an object of archived notes
     $scope.archiveList = [
       {
         title: "Note Bob",
@@ -18,5 +19,7 @@ angular.module('todoApp')
         date: "Today at 7:48"
       }
     ];
+
+    
 
   });//end of controller

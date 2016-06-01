@@ -1,13 +1,59 @@
 <html>
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width">
+  <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+  <!-- build:css(.) styles/vendor.css -->
+  <!-- bower:css -->
+  <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.css" />
+  <!-- endbower -->
+  <!-- endbuild -->
+  <!-- build:css(.tmp) styles/main.css -->
+  <link rel="stylesheet" href="/styles/main.css">
+  <!-- endbuild -->
+</head>
 
-<body ng-app="todoApp" ng-controller="archiveCtrl">
-  <div class="col-xs-6 col-lg-4" ng-repeat="note in archiveList track by $index">
-     <h2>{{note.title}}</h2>
-     <p><strong><em>{{note.date}}</em></strong></p>
-     <p>{{note.text}}</p>
-     <button type="button" ng-show="note.taskCompleted" ng-click="archiveNote(note)" class="btn btn-success">Completed, click to add to archive</button>
-     <button type="button" ng-show="!note.taskCompleted" ng-click="markCompleted(note)" class="btn btn-warning">Not completed, click to mark completed</button>
-   </div><!--/.col-xs-6.col-lg-4-->
+<body ng-app="todoApp" ng-controller="MainCtrl">
+  <div class="header">
+    <div class="navbar navbar-default" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#js-navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+
+          <a class="navbar-brand" href="/">Todo List</a>
+        </div>
+
+        <div class="collapse navbar-collapse" id="js-navbar-collapse">
+
+          <ul class="nav navbar-nav">
+            <li><a href="/">Current List</a></li>
+            <li class="active"><a ng-href="/views/archive.html">Archive List</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row row-offcanvas row-offcanvas-right">
+      <div class="col-xs-6 col-lg-4" ng-repeat="note in archiveList track by $index">
+         <h2>{{note.title}}</h2>
+         <p><strong><em>{{note.date}}</em></strong></p>
+         <p>{{note.text}}</p>
+         </div><!--/.col-xs-6.col-lg-4-->
+     </div>
+   <div class="footer">
+ <div class="container">
+    <p><span class="glyphicon glyphicon-heart"></span> from Jaydub</p>
+</div>
+</div>
 
 
    <!-- build:js(.) scripts/vendor.js -->
