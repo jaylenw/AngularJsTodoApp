@@ -16,36 +16,40 @@
 angular.module('todoApp')
   .controller('MainCtrl', function ($scope) {
 
+    //Initializing variable to false for showing archive notes
+    $scope.showArchive = false;
+
     //making an object of todos notes in the object of todos list
       $scope.todoList = [
         {
           title: "Note A",
           text: "Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. ",
           taskCompleted: true,
-          date: "Today at 7:48"
+          date: "Today at 7:48",
+          noteArchived: false
         },
         {
           title: "Note B",
           text: "Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. ",
           taskCompleted: false,
-          date: "Today at 7:48"
+          date: "Today at 7:48",
+          noteArchived: false
         },
         {
           title: "Note C",
           text: "Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. ",
           taskCompleted: false,
-          date: "Today at 7:48"
-        }];
-
-        //making an object of archived notes
-        $scope.archiveList = [
-          {
-            title: "Note Bob",
-            text: "Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. ",
-            taskCompleted: true,
-            date: "Today at 7:48"
-          }
-        ];
+          date: "Today at 7:48",
+          noteArchived: false
+        },
+        {
+          title: "Note Bob",
+          text: "Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. ",
+          taskCompleted: true,
+          date: "Today at 7:48",
+          noteArchived: true
+        }
+      ];
 
       //Initializing a blank note for ng-model in jumbotron of index.html
         $scope.note = {
@@ -62,7 +66,8 @@ angular.module('todoApp')
             title: noteTitle,
             text: noteText,
             taskCompleted: false,
-            date: moment().calendar() //moment uses moment.js
+            date: moment().calendar(), //moment uses moment.js
+            noteArchived: false
             //Today at 7:48
           };
           //push temp note to todoList
@@ -73,24 +78,18 @@ angular.module('todoApp')
           $scope.note.taskCompleted = false;
         };
 
-        //deleting selected note from todoList
+        //marking passed in note to noteArchived to true
         $scope.archiveNote = function(note){
-          //adding note to archiveList
-          $scope.archiveList.push(note);
-
-          //getting index of the note in the array in the
-          //todoList
-          var indexOf = $scope.todoList.indexOf(note);
-
-          //removing particular note from todoList
-          if(indexOf !== -1){
-            $scope.todoList.splice(indexOf, 1);
-          }
+          note.noteArchived = true;
         };
 
         //setting taskCompleted attribute to completed
         $scope.markCompleted = function(note) {
           note.taskCompleted = true;
         };
+
+        $scope.test = function(){
+          alert($scope.showArchive)
+        }
 
   });//end of controller

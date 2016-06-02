@@ -53,38 +53,7 @@
     </div>
 
     <div class="container">
-      <div class="row row-offcanvas row-offcanvas-right">
-
-       <div class="col-xs-12 col-sm-9">
-         <p class="pull-right visible-xs">
-           <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Toggle nav</button>
-         </p>
-         <div class="jumbotron">
-            <h2>Add a Note</h2>
-            <form name="noteForm" novalidate>
-              <div class="form-group">
-                <label>Title</label>
-                <input type="title" ng-model="note.title" class="form-control ng-dirty ng-valid" id="titleInput" placeholder="Title" required>
-              </div>
-              <div class="form-group">
-                <label>Text</label>
-                <input type="textarea" ng-model="note.text" class="form-control ng-dirty ng-valid" id="textInput" placeholder="Enter Note Description" required>
-              </div>
-              <h2>{{note.title}}</h2>
-              <p>{{note.text}}</p>
-              <button type="submit" ng-show="noteForm.$valid" ng-click="addNote(note.title, note.text)" class="btn btn-primary">Save</button>
-            </form>
-         </div>
-         <div class="row">
-           <div class="col-xs-6 col-lg-4" ng-repeat="note in todoList track by $index">
-              <h2>{{note.title}}</h2>
-              <p><strong><em>{{note.date}}</em></strong></p>
-              <p>{{note.text}}</p>
-              <button type="button" ng-show="note.taskCompleted" ng-click="archiveNote(note)" class="btn btn-success">Completed, click to add to archive</button>
-              <button type="button" ng-show="!note.taskCompleted" ng-click="markCompleted(note)" class="btn btn-warning">Not completed, click to mark completed</button>
-            </div><!--/.col-xs-6.col-lg-4-->
-         </div><!--/row-->
-       </div><!--/.col-xs-12.col-sm-9-->
+      <div ng-view=""></div>
     </div>
 
     <div class="footer">

@@ -25,8 +25,8 @@ angular
         controllerAs: 'main'
       })
       .when('/about', {
-        templateUrl: 'views/about.html',
-        controller: 'AboutCtrl',
+        templateUrl: 'views/archive.html',
+        controller: 'archiveCtrl',
         controllerAs: 'about'
       })
       .otherwise({
