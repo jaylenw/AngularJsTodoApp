@@ -1,6 +1,6 @@
 angular.module('todoApp')
 .factory("Task",['$resource', function($resource){
-  return $resource("http://192.168.1.140:3000/tasks", {},{
+  return $resource("http://dev.kondeo.com:3020/tasks", {},{
     get:{
       method:"GET",
       params:{},
@@ -15,7 +15,7 @@ angular.module('todoApp')
       method:"PUT",
       params:{ _id: '_id' },
       isArray: false,
-      url: "http://192.168.1.140:3000/tasks/:_id"
+      url: "http://dev.kondeo.com:3020/tasks/:_id"
     }
   })
 }]);
