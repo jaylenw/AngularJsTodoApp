@@ -20,7 +20,7 @@
     the body tag are linked to the AngularJS app. Adding our
     'MainCtrl' controller to the body tag as well so elements in the body tag
     will have access to data inside our controller -->
-  <body ng-app="todoApp" ng-controller="MainCtrl">
+  <body ng-app="todoApp">
     <!--[if lte IE 8]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
@@ -93,6 +93,7 @@
         <script src="scripts/app.js"></script>
         <script src="scripts/controllers/main.js"></script>
         <script src="scripts/controllers/archive.js"></script>
+        <script src="scripts/services/task.js"></script>
         <!-- endbuild -->
 </body>
 </html>

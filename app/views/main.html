@@ -16,7 +16,7 @@
           <input type="textarea" ng-model="note.text" class="form-control ng-dirty ng-valid" id="textInput" placeholder="Enter Note Description" required>
         </div>
         <h2>{{note.title}}</h2>
-        <p>{{note.text}}</p>
+        <p>{{note.body}}</p>
         <button type="submit" ng-show="noteForm.$valid" ng-click="addNote(note.title, note.text)" class="btn btn-primary">Save</button>
       </form>
    </div>
@@ -26,12 +26,12 @@
     </div>
 
 
-     <div class="col-xs-6 col-lg-4" ng-repeat="note in todoList | filter:{noteArchived:showArchive}">
+     <div class="col-xs-6 col-lg-4" ng-repeat="note in todoList | orderBy: '-date' | filter:{archive:showArchive}">
         <h2>{{note.title}}</h2>
         <p><strong><em>{{note.date}}</em></strong></p>
-        <p>{{note.text}}</p>
-        <button type="button" ng-show="note.taskCompleted" ng-click="archiveNote(note)" class="btn btn-success">Completed, click to add to archive</button>
-        <button type="button" ng-show="!note.taskCompleted" ng-click="markCompleted(note)" class="btn btn-warning">Not completed, click to mark completed</button>
+        <p>{{note.body}}</p>
+        <button type="button" ng-show="note.taskCompleted" ng-click="archiveNote(note)" class="btn btn-success">click to add to archive</button>
+        <button type="button" ng-show="!note.taskCompleted" ng-click="markCompleted(note)" class="btn btn-warning">click to mark completed</button>
     </div><!--/.col-xs-6.col-lg-4-->
 
 

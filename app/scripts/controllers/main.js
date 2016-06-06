@@ -14,43 +14,17 @@
  //data. This is called dependency injection
 
 angular.module('todoApp')
-  .controller('MainCtrl', function ($scope) {
+  .controller('MainCtrl', function ($scope, Task) {
 
     //Initializing variable to false for showing archive notes
     $scope.showArchive = false;
 
     //making an object of todos notes in the object of todos list
-      $scope.todoList = [
-        {
-          title: "Note A",
-          text: "Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. ",
-          taskCompleted: true,
-          date: "Today at 7:48",
-          noteArchived: false
-        },
-        {
-          title: "Note B",
-          text: "Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. ",
-          taskCompleted: false,
-          date: "Today at 7:48",
-          noteArchived: false
-        },
-        {
-          title: "Note C",
-          text: "Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. ",
-          taskCompleted: false,
-          date: "Today at 7:48",
-          noteArchived: false
-        },
-        {
-          title: "Note Bob",
-          text: "Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. ",
-          taskCompleted: true,
-          date: "Today at 7:48",
-          noteArchived: true
-        }
-      ];
-
+      $scope.todoList = Task.get(null, function(response){
+        console.log("success");
+      }, function(err, data){
+        console.log("error");
+      });
       //Initializing a blank note for ng-model in jumbotron of index.html
         $scope.note = {
           title: "",
@@ -64,18 +38,19 @@ angular.module('todoApp')
           //create temp note
           var note = {
             title: noteTitle,
-            text: noteText,
-            taskCompleted: false,
-            date: moment().calendar(), //moment uses moment.js
-            noteArchived: false
-            //Today at 7:48
+            body: noteText,
+            archive: false
           };
+          var serverNode = Task.create(note);
+
           //push temp note to todoList
-          $scope.todoList.push(note);
+          $scope.todoList.push(serverNode);
           //reset $scope.note to init values
           $scope.note.title = "";
           $scope.note.text = "";
           $scope.note.taskCompleted = false;
+
+
         };
 
         //marking passed in note to noteArchived to true
