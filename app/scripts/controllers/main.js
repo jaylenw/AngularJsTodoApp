@@ -22,7 +22,7 @@ angular.module('todoApp')
     //making an object of todos notes in the object of todos list
       $scope.todoList = Task.get(null, function(response){
         console.log("success");
-      }, function(err, data){
+      }, function(err){
         console.log("error");
       });
       //Initializing a blank note for ng-model in jumbotron of index.html
