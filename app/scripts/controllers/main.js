@@ -64,7 +64,7 @@ angular.module('todoApp')
         };
 
         $scope.test = function(){
-          alert($scope.showArchive)
+          alert($scope.showArchive);
         }
 
   });//end of controller

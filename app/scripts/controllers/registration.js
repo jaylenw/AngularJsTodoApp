@@ -11,13 +11,24 @@ angular.module('todoApp')
   .controller('registrationCtrl', function ($scope, User) {
 
     $scope.user = {};
+    $scope.userResponse = "";
 
     $scope.register = function() {
       User.register($scope.user, function(response) {
         console.log(response)
         localStorage.setItem("token", response.token);
       }, function(err) {
-        console.log("oh shit")
+        console.log(err);
+        //alert(err.data.msg);
+        //client entered wrong information for our backend
+        //400 level errors
+        if(err.status > 399 && err.status < 500){
+          $scope.userResponse = err.data.msg + " Please try again.";
+        }
+        else{//something is wrong with the backend. 500 level errors
+          $scope.userResponse = err.data.msg + " Server error. Please try again later.";
+        }
+
       });
       //console.log($scope.user);
     };
