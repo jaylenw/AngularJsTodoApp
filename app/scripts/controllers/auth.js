@@ -8,30 +8,35 @@
  * Controller of the todoApp
  */
 angular.module('todoApp')
-  .controller('authCtrl', function ($scope, User) {
+  .controller('authCtrl', function ($scope, User, ngNotify) {
 
     $scope.user = {};
-    $scope.userResponse = "";
-    $scope.asdf = true;
 
     $scope.register = function() {
       User.register($scope.user, function(response) {
         console.log(response)
         localStorage.setItem("token", response.token);
       }, function(err) {
-        console.log(err);
-        //alert(err.data.msg);
-        //client entered wrong information for our backend
-        //400 level errors
-        if(err.status > 399 && err.status < 500){
-          $scope.userResponse = err.data.msg + " Please try again.";
-        }
-        else{//something is wrong with the backend. 500 level errors
-          $scope.userResponse = err.data.msg + " Server error. Please try again later.";
-        }
 
+        switch(err.status){
+          case 406:
+            ngNotify.set('Email address is not valid. Please enter a valid Email address.', 'error');
+            break;
+          case 409:
+            ngNotify.set('Email has already been registerd. Please enter another Email address.');
+            break;
+          case 412:
+            ngNotify.set('Email address and Password were not entered successfully. Please enter them again.');
+            break;
+          case 500:
+            ngNotify.set('We could not save your account. Please try again');
+            break;
+          default:
+            ngNotify.set('An error occured processing your request to the server. Please try again');
+        }
+        console.log(err);
       });
-      //console.log($scope.user);
+
     };
 
     $scope.login = function(){
