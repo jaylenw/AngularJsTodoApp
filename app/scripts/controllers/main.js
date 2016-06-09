@@ -20,51 +20,49 @@ angular.module('todoApp')
     $scope.showArchive = false;
 
     //making an object of todos notes in the object of todos list
-      $scope.todoList = Task.get(null, function(response){
+    $scope.todoList = Task.get(null, function(response){
         console.log("success");
       }, function(err){
         console.log("error");
-      });
+    });
       //Initializing a blank note for ng-model in jumbotron of index.html
-        $scope.note = {
+    $scope.note = {
           title: "",
           text: "",
           taskCompleted: false,
           date: ""
-        };
+    };
 
-        //add note to todoList
-        $scope.addNote = function(noteTitle, noteText){
+    //add note to todoList
+    $scope.addNote = function(noteTitle, noteText){
           //create temp note
-          var note = {
-            title: noteTitle,
-            body: noteText,
-            archive: false
-          };
-          var serverNode = Task.create(note);
+      var note = {
+        title: noteTitle,
+        body: noteText,
+        archive: false
+      };
+      var serverNode = Task.create(note);
 
-          //push temp note to todoList
-          $scope.todoList.push(serverNode);
-          //reset $scope.note to init values
-          $scope.note.title = "";
-          $scope.note.text = "";
-          $scope.note.taskCompleted = false;
+      //push temp note to todoList
+      $scope.todoList.push(serverNode);
+      //reset $scope.note to init values
+      $scope.note.title = "";
+      $scope.note.text = "";
+      $scope.note.taskCompleted = false;
+      };
 
+      //marking passed in note to noteArchived to true
+      $scope.archiveNote = function(note){
+        note.noteArchived = true;
+      };
 
-        };
+      //setting taskCompleted attribute to completed
+      $scope.markCompleted = function(note) {
+        note.taskCompleted = true;
+      };
 
-        //marking passed in note to noteArchived to true
-        $scope.archiveNote = function(note){
-          note.noteArchived = true;
-        };
-
-        //setting taskCompleted attribute to completed
-        $scope.markCompleted = function(note) {
-          note.taskCompleted = true;
-        };
-
-        $scope.test = function(){
-          alert($scope.showArchive);
-        }
+      $scope.test = function(){
+        alert($scope.showArchive);
+      };
 
   });//end of controller

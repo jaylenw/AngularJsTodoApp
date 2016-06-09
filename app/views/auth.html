@@ -11,11 +11,11 @@
   <input type="password" ng-model="user.confirmpassword" ng-show="amRegistering"  class="form-control" ng-class="{fieldInvalid: (user.password != user.confirmpassword)}" placeholder="confirm password">
 
 
-  <a class="btn btn-default" ng-show="amRegistering" ng-click="register()" type="button"
+  <button class="btn btn-default" ng-show="amRegistering" ng-click="register()" type="button"
     ng-disabled="
     user.email.length == 0 ||
     !user.password ||
-    !(user.password == user.confirmpassword)">Register!</a>
+    !(user.password == user.confirmpassword)">Register!</button>
   <button class="btn btn-default" ng-hide="amRegistering" ng-click="login()" type="button">Login!</button>
 
 </div><!-- /.row -->

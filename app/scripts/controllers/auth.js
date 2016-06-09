@@ -8,15 +8,20 @@
  * Controller of the todoApp
  */
 angular.module('todoApp')
-  .controller('authCtrl', function ($scope, User, ngNotify) {
+  .controller('authCtrl', function ($scope, $window, User, ngNotify) {
 
     $scope.user = {};
 
     $scope.register = function() {
       User.register($scope.user, function(response) {
         ngNotify.set('You are now Registered.', 'success');
-        console.log(response)
+        console.log(response);
+        //storing token from server into browser
         localStorage.setItem("token", response.token);
+        //redirecting user to home page where task lies after 4000ms
+        setInterval(function(){
+          $window.location.href = '/';
+        }, 4000);
       }, function(err) {
 
         switch(err.status){
@@ -42,7 +47,7 @@ angular.module('todoApp')
 
     $scope.login = function(){
 
-    }
+    };
 
 
 
