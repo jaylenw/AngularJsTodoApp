@@ -14,6 +14,7 @@ angular.module('todoApp')
 
     $scope.register = function() {
       User.register($scope.user, function(response) {
+        ngNotify.set('You are now Registered.', 'success');
         console.log(response)
         localStorage.setItem("token", response.token);
       }, function(err) {
@@ -23,16 +24,16 @@ angular.module('todoApp')
             ngNotify.set('Email address is not valid. Please enter a valid Email address.', 'error');
             break;
           case 409:
-            ngNotify.set('Email has already been registerd. Please enter another Email address.');
+            ngNotify.set('Email has already been registerd. Please enter another Email address.', 'error');
             break;
           case 412:
-            ngNotify.set('Email address and Password were not entered successfully. Please enter them again.');
+            ngNotify.set('Email address and Password were not entered successfully. Please enter them again.', 'error');
             break;
           case 500:
-            ngNotify.set('We could not save your account. Please try again');
+            ngNotify.set('We could not save your account. Please try again.', 'error');
             break;
           default:
-            ngNotify.set('An error occured processing your request to the server. Please try again');
+            ngNotify.set('An error occured processing your request to the server. Please try again.', 'error');
         }
         console.log(err);
       });
