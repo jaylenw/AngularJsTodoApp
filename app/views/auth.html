@@ -1,22 +1,24 @@
 
-<div ng-controller="authCtrl" class="row">
+<div class="row">
   <div class="row">
     <p>{{userResponse}}</p>
   </div>
-  <div class="col-lg-6">
-    <div class="input-group">
-      <span class="input-group-btn">
+  <div class="row">
+    <a ng-hide="amRegistering" ng-click="amRegistering = true">Click to Register</a>
+    <a ng-show="amRegistering" ng-click="amRegistering = false">Click to Login</a>
+  </div>
 
-      </span>
-      <input type="text" ng-model="user.email" class="form-control" placeholder="Email address">
-    </div><!-- /input-group -->
-  </div><!-- /.col-lg-6 -->
-  <div class="col-lg-6">
-    <div class="input-group">
-      <input type="password" ng-model="user.password" class="form-control" placeholder="password">
-      <span class="input-group-btn">
-        <button class="btn btn-default" ng-click="register()" type="button">register!</button>
-      </span>
-    </div><!-- /input-group -->
-  </div><!-- /.col-lg-6 -->
+  <input type="text" ng-model="user.email" class="form-control" placeholder="Email address">
+
+  <input type="password" ng-model="user.password" class="form-control" placeholder="password">
+  <input type="password" ng-model="user.confirmpassword" ng-show="amRegistering"  class="form-control" ng-class="{fieldInvalid: (user.password != user.confirmpassword)}" placeholder="confirm password">
+
+
+  <a class="btn btn-default" ng-show="amRegistering" ng-click="register()" type="button"
+    ng-disabled="
+    user.email.length == 0 ||
+    !user.password ||
+    !(user.password == user.confirmpassword)">Register!</a>
+  <button class="btn btn-default" ng-hide="amRegistering" ng-click="login()" type="button">Login!</button>
+
 </div><!-- /.row -->

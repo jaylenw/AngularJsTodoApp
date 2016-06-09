@@ -12,6 +12,7 @@ angular.module('todoApp')
 
     $scope.user = {};
     $scope.userResponse = "";
+    $scope.asdf = true;
 
     $scope.register = function() {
       User.register($scope.user, function(response) {
@@ -32,6 +33,10 @@ angular.module('todoApp')
       });
       //console.log($scope.user);
     };
+
+    $scope.login = function(){
+
+    }
 
 
 

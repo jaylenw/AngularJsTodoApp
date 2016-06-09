@@ -83,11 +83,19 @@ body {
 }
 
 /*makes input fields green when text is valid and area is filled */
-.ng-valid.ng-dirty {
+/*.ng-valid.ng-dirty {
   border-color: #78FA89;
   border-width: 2px;
-}
+}*/
 
 .form-control:focus {
   box-shadow: none;
+  border: inherit;
+}
+
+.fieldInvalid {
+  border: 1px solid red;
+}
+.fieldInvalid:focus {
+  border: 1px solid red;
 }
