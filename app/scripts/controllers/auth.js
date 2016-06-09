@@ -8,7 +8,7 @@
  * Controller of the todoApp
  */
 angular.module('todoApp')
-  .controller('registrationCtrl', function ($scope, User) {
+  .controller('authCtrl', function ($scope, User) {
 
     $scope.user = {};
     $scope.userResponse = "";
