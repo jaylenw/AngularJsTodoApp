@@ -45,7 +45,11 @@ angular.module('todoApp')
     //add note to todoList
     $scope.addNote = function(noteTitle, noteBody){
       var serverNode = Task.create({"title": noteTitle,"body":noteBody ,"token":$scope.userToken}, function(response){
-        console.log("response");
+      console.log("note added successfully ");
+      ngNotify.set("Syncing Note with the Server.",'success');
+      }, function(err){
+          console.log("error while adding note" + err.status );
+          ngNotify.set('Error, Note could not be added. Try again later.','error');
       });
       //push temp note to todoList
       $scope.todoList.push(serverNode);
@@ -66,10 +70,6 @@ angular.module('todoApp')
     //setting taskCompleted attribute to completed
     $scope.markCompleted = function(note) {
       note.taskCompleted = true;
-    };
-
-    $scope.test = function(){
-      alert($scope.showArchive);
     };
 
   });//end of controller
