@@ -17,6 +17,7 @@
     user.email.length == 0 ||
     !user.password ||
     !(user.password == user.confirmpassword)">Register!</button>
-  <button class="btn btn-default" ng-hide="amRegistering" ng-click="login()" type="button">Login!</button>
+  <button class="btn btn-default" ng-hide="amRegistering" ng-click="login()" type="button"
+  ng-disabled="!user.email || user.email.length == 0 || !user.password || user.password.length == 0">Login!</button>
 
 </div><!-- /.row -->
