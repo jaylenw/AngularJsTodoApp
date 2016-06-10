@@ -99,3 +99,10 @@ body {
 .fieldInvalid:focus {
   border: 1px solid red;
 }
+
+.noteDiv {
+  border: 2px solid purple;
+  padding: 10px;
+  margin: 10px;
+  background-color: rgb(153, 235, 255);
+}
