@@ -110,5 +110,9 @@ body {
 
 .noteDiv input {
   border: 2px solid #728DA5;
+}
 
+.authText p{
+  font-size: 18px;
+  color: white;
 }

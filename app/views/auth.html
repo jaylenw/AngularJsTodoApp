@@ -1,9 +1,9 @@
 
 <div class="row">
-  <p ng-if="currentSavedToken"> You are already logged in. Register or Login to access another account.</p>
+  <div class="authText" ng-if="currentSavedToken"> <p>You are already logged in. Register or Login to access another account.</p></div>
   <div class="row">
-    <a ng-hide="amRegistering" ng-click="amRegistering = true">Click to Register</a>
-    <a ng-show="amRegistering" ng-click="amRegistering = false">Click to Login</a>
+    <button class="btn btn-primary" type="button" ng-hide="amRegistering" ng-click="amRegistering = true">Click to Register</button>
+    <button class="btn btn-primary" type="button" ng-show="amRegistering" ng-click="amRegistering = false">Click to Login</button>
   </div>
 
   <input type="text" ng-model="user.email" class="form-control" placeholder="Email address">
@@ -12,12 +12,12 @@
   <input type="password" ng-model="user.confirmpassword" ng-show="amRegistering"  class="form-control" ng-class="{fieldInvalid: (user.password != user.confirmpassword)}" placeholder="confirm password">
 
 
-  <button class="btn btn-default" ng-show="amRegistering" ng-click="register()" type="button"
+  <button class="btn btn-success" ng-show="amRegistering" ng-click="register()" type="button"
     ng-disabled="
     user.email.length == 0 ||
     !user.password ||
     !(user.password == user.confirmpassword)">Register!</button>
-  <button class="btn btn-default" ng-hide="amRegistering" ng-click="login()" type="button"
+  <button class="btn btn-success" ng-hide="amRegistering" ng-click="login()" type="button"
   ng-disabled="!user.email || user.email.length == 0 || !user.password || user.password.length == 0">Login!</button>
 
 </div><!-- /.row -->
