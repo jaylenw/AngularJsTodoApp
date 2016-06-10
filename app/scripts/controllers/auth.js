@@ -20,10 +20,8 @@ angular.module('todoApp')
         console.log(response);
         //storing token from server into browser
         localStorage.setItem("token", response.token);
-        //redirecting user to home page where task lies after 4000ms
-        setInterval(function(){
-          $window.location.href = '/';
-        }, 4000);//4000ms because notification timeout is 4000ms
+        //redirecting user to home page
+        $window.location.href = '/';
       }, function(err) {
 
           switch(err.status){
@@ -54,10 +52,8 @@ angular.module('todoApp')
       console.log(response);
       //storing token from server into browser
       localStorage.setItem("token", response.token);
-      //redirecting user to home page where task lies after 4000ms
-      setInterval(function(){
-        $window.location.href = '/';
-      }, 4000);//4000ms because notification timeout is 4000ms
+      //redirecting user to home page
+      $window.location.href = '/';
 
     }, function(err){
 
