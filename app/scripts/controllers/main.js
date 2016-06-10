@@ -55,9 +55,27 @@ angular.module('todoApp')
       //reset $scope.note to init values
       $scope.note.title = "";
       $scope.note.body = "";
-      $scope.note.taskCompleted = false;
     };
 
-    //update (edit) note in todoList
+    //update (edit) note content in todoList
+    $scope.updateNoteContent = function(noteID, noteTitle, noteBody){
+      var payload = {id:noteID, "title": noteTitle, "body": noteBody, "token":$scope.userToken};
+      Task.update(payload,function(success){
+
+      }, function(err){
+
+      });
+    };
+
+    //update (edit) note archive status
+    $scope.updateNoteArchive = function(noteID, noteArchive){
+      console.log(noteID, noteArchive);
+      var payload = {id:noteID, "archive":noteArchive, "token":$scope.userToken};
+      Task.update(payload ,function(success){
+        console.log("success");
+      }, function(err){
+        console.log("error");
+      });
+    }
 
   });//end of controller

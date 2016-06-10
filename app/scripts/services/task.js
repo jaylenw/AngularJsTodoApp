@@ -13,9 +13,9 @@ angular.module('todoApp')
     },
     update:{
       method:"PUT",
-      params:{ _id: '_id' },
+      params:{ id: '@id' },
       isArray: false,
-      url: "http://dev.kondeo.com:3020/tasks/:_id"
+      url: "http://dev.kondeo.com:3020/tasks/:id"
     }
   })
 }]);

@@ -36,17 +36,17 @@
           <h2>{{note.title}}</h2>
           <p><strong><em>{{note.date}}</em></strong></p>
           <p>{{note.body}}</p>
-          <button type="button" ng-hide="note.archive" ng-click="note.archive = true" class="btn btn-success">Add to Archive</button>
+          <button type="button" ng-hide="note.archive" ng-click="note.archive = true; updateNoteArchive(note._id, note.archive);" class="btn btn-success">Add to Archive</button>
           <button type="button" ng-hide="note.archive" ng-click="isEditting = true" class="btn btn-success">Edit</button>
-          <button type="button" ng-show="note.archive" ng-click="note.archive = false" class="btn btn-success">Restore</button>
+          <button type="button" ng-show="note.archive" ng-click="note.archive = false; updateNoteArchive(note._id, note.archive);" class="btn btn-success">Restore</button>
         </div>
         <div class="noteDiv" ng-show="isEditting">
           <p><em>Edit mode</em></p>
           <input type="title" ng-model="note.title" id="titleInput">
           <p><strong><em>{{note.date}}</em></strong></p>
           <input type="textarea" ng-model="note.body" id="textInput">
-          <button type="button" ng-hide="note.archive" ng-click="isEditting = false" class="btn btn-success">Save</button>
-          <button type="button" ng-show="note.archive" ng-click="note.archive = false" class="btn btn-success">Restore</button>
+          <button type="button" ng-hide="note.archive" ng-click="isEditting = false; updateNoteContent(note._id, note.title, note.body)" class="btn btn-success">Save</button>
+          <button type="button" ng-show="note.archive" ng-click="note.archive = false; updateNoteArchive(note._id, note.archive);" class="btn btn-success">Restore</button>
         </div>
     </div>
    </div>
