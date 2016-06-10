@@ -13,6 +13,9 @@ angular.module('todoApp')
     //Initializing our user object
     $scope.user = {};
 
+    //Initializing our user token
+    $scope.currentSavedToken = localStorage.getItem("token");
+
     //registering the user
     $scope.register = function() {
       User.register($scope.user, function(response) {
