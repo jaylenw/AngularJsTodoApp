@@ -62,8 +62,8 @@ angular.module('todoApp')
 
 
     //marking passed in note to noteArchived to true
-    $scope.archiveNote = function(note){
-      note.archive = true;
-    };
+    // $scope.archiveNote = function(note){
+    //   note.archive = true;
+    // };
 
   });//end of controller
