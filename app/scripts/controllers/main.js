@@ -30,21 +30,21 @@ angular.module('todoApp')
 
     //making an object of todos notes in the object of todos list
     $scope.todoList = Task.get(null, function(response){
-        console.log("success");
-      }, function(err){
-        console.log("error");
+      console.log("got tasks");
+    }, function(err){
+      console.log("did not obtain tasks");
     });
-      //Initializing a blank note for ng-model in jumbotron of index.html
+    //Initializing a blank note for ng-model in jumbotron of index.html
     $scope.note = {
-          title: "",
-          text: "",
-          taskCompleted: false,
-          date: ""
+      title: "",
+      body: "",
+      taskCompleted: false,
+      date: ""
     };
 
     //add note to todoList
     $scope.addNote = function(noteTitle, noteText){
-          //create temp note
+      //create temp note
       var note = {
         title: noteTitle,
         body: noteText,
@@ -58,20 +58,23 @@ angular.module('todoApp')
       $scope.note.title = "";
       $scope.note.text = "";
       $scope.note.taskCompleted = false;
-      };
+    };
 
-      //marking passed in note to noteArchived to true
-      $scope.archiveNote = function(note){
-        note.noteArchived = true;
-      };
+    //update (edit) note in todoList
 
-      //setting taskCompleted attribute to completed
-      $scope.markCompleted = function(note) {
-        note.taskCompleted = true;
-      };
 
-      $scope.test = function(){
-        alert($scope.showArchive);
-      };
+    //marking passed in note to noteArchived to true
+    $scope.archiveNote = function(note){
+      note.noteArchived = true;
+    };
+
+    //setting taskCompleted attribute to completed
+    $scope.markCompleted = function(note) {
+      note.taskCompleted = true;
+    };
+
+    $scope.test = function(){
+      alert($scope.showArchive);
+    };
 
   });//end of controller
