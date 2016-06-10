@@ -36,8 +36,7 @@
           <h2>{{note.title}}</h2>
           <p><strong><em>{{note.date}}</em></strong></p>
           <p>{{note.body}}</p>
-          <button type="button" ng-show="note.taskCompleted" ng-click="archiveNote(note)" class="btn btn-success">Add to Archive</button>
-          <button type="button" ng-show="!note.taskCompleted" ng-click="markCompleted(note)" class="btn btn-warning">Mark Completed</button>
+          <button type="button" ng-hide="note.archive" ng-click="archiveNote(note)" class="btn btn-success">Add to Archive</button>
         </div>
     </div>
    </div>

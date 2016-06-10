@@ -38,7 +38,6 @@ angular.module('todoApp')
     $scope.note = {
       title: "",
       body: "",
-      taskCompleted: false,
       date: ""
     };
 
@@ -65,11 +64,6 @@ angular.module('todoApp')
     //marking passed in note to noteArchived to true
     $scope.archiveNote = function(note){
       note.archive = true;
-    };
-
-    //setting taskCompleted attribute to completed
-    $scope.markCompleted = function(note) {
-      note.taskCompleted = true;
     };
 
   });//end of controller
