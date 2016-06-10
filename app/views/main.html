@@ -15,8 +15,6 @@
           <label>Text</label>
           <input type="textarea" ng-model="note.body" class="form-control ng-dirty ng-valid" id="textInput" placeholder="Enter Note Description" required>
         </div>
-        <h2>{{note.title}}</h2>
-        <p>{{note.body}}</p>
         <button type="submit" ng-show="noteForm.$valid" ng-click="addNote(note.title, note.body)" class="btn btn-primary">Save</button>
       </form>
    </div>
@@ -41,6 +39,6 @@
           <button type="button" ng-show="note.taskCompleted" ng-click="archiveNote(note)" class="btn btn-success">Add to Archive</button>
           <button type="button" ng-show="!note.taskCompleted" ng-click="markCompleted(note)" class="btn btn-warning">Mark Completed</button>
         </div>
-    </div><!--/.col-xs-6.col-lg-4-->
-   </div><!--/row-->
- </div><!--/.col-xs-12.col-sm-9-->
+    </div>
+   </div>
+ </div>
