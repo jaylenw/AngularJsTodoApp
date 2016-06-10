@@ -7,6 +7,7 @@
 
 body {
   padding: 0;
+  background-color: #565595;
 }
 
 /* Everything but the jumbotron gets side spacing for mobile first views */
@@ -19,7 +20,6 @@ body {
 
 /* Custom page header */
 .header {
-  border-bottom: 1px solid #e5e5e5;
   margin-bottom: 10px;
 }
 /* Make the masthead heading the same height as the navigation */
@@ -34,7 +34,7 @@ body {
 .footer {
   padding-top: 19px;
   color: #777;
-  border-top: 1px solid #e5e5e5;
+  background-color: #f8f8f8;
 }
 
 .container-narrow > hr {
@@ -101,12 +101,14 @@ body {
 }
 
 .noteDiv {
-  border: 2px solid purple;
+  border: 5px solid #042037;
+  border-radius: 5px;
   padding: 10px;
   margin: 10px;
-  background-color: rgb(153, 235, 255);
+  background-color: #eee;
 }
 
 .noteDiv input {
-  border: 2px solid purple;
+  border: 2px solid #728DA5;
+
 }
