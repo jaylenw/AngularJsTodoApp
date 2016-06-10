@@ -4,7 +4,7 @@
    <p class="pull-right visible-xs">
      <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Toggle nav</button>
    </p>
-   <div class="jumbotron">
+   <div class="jumbotron" ng-show="userToken">
       <h2>Add a Note</h2>
       <form name="noteForm" novalidate>
         <div class="form-group">
@@ -20,6 +20,11 @@
         <button type="submit" ng-show="noteForm.$valid" ng-click="addNote(note.title, note.text)" class="btn btn-primary">Save</button>
       </form>
    </div>
+   <div class="jumbotron" ng-show="!userToken">
+      <h2>Please Login or Register</h2>
+      <!-- button takes user to auth page -->
+      <button class="btn btn-primary" ng-click="toAuthpage()">Login/Register</button>
+   </div>
    <div class="row">
     <button ng-show="!showArchive" class="btn btn-primary" ng-click="showArchive = true;">Show archive list</button>
     <button ng-show="showArchive" class="btn btn-primary" ng-click="showArchive = false;">Show todo list</button>
@@ -33,10 +38,5 @@
         <button type="button" ng-show="note.taskCompleted" ng-click="archiveNote(note)" class="btn btn-success">click to add to archive</button>
         <button type="button" ng-show="!note.taskCompleted" ng-click="markCompleted(note)" class="btn btn-warning">click to mark completed</button>
     </div><!--/.col-xs-6.col-lg-4-->
-
-
-
-
-
    </div><!--/row-->
  </div><!--/.col-xs-12.col-sm-9-->

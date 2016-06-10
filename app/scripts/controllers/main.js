@@ -14,7 +14,16 @@
  //data. This is called dependency injection
 
 angular.module('todoApp')
-  .controller('MainCtrl', function ($scope, Task) {
+  .controller('MainCtrl', function ($scope, $window, Task) {
+
+    //Getting user token and adding it to scope
+    $scope.userToken = localStorage.getItem("token");
+
+    //Redirect user to Authentication page
+    $scope.toAuthpage = function(){
+      $window.location.href = '#/auth';
+    }
+
 
     //Initializing variable to false for showing archive notes
     $scope.showArchive = false;
