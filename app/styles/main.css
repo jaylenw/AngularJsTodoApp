@@ -106,3 +106,7 @@ body {
   margin: 10px;
   background-color: rgb(153, 235, 255);
 }
+
+.noteDiv input {
+  border: 2px solid purple;
+}
