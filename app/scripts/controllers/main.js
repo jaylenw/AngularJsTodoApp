@@ -60,10 +60,4 @@ angular.module('todoApp')
 
     //update (edit) note in todoList
 
-
-    //marking passed in note to noteArchived to true
-    // $scope.archiveNote = function(note){
-    //   note.archive = true;
-    // };
-
   });//end of controller

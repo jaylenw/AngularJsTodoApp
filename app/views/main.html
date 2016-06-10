@@ -25,7 +25,7 @@
    </div>
    <div class="row">
      <div ng-show="userToken">
-       <button ng-show="!showArchive" class="btn btn-primary" ng-click="showArchive = true;">Show archive list</button>
+       <button ng-hide="showArchive" class="btn btn-primary" ng-click="showArchive = true;">Show archive list</button>
        <button ng-show="showArchive" class="btn btn-primary" ng-click="showArchive = false;">Show todo list</button>
    </div>
   </div>
