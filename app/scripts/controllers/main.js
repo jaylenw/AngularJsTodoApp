@@ -64,7 +64,7 @@ angular.module('todoApp')
 
     //marking passed in note to noteArchived to true
     $scope.archiveNote = function(note){
-      note.noteArchived = true;
+      note.archive = true;
     };
 
     //setting taskCompleted attribute to completed
