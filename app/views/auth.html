@@ -2,8 +2,8 @@
 <div class="row">
   <div class="authText" ng-if="currentSavedToken"> <p>You are already logged in. Register or Login to access another account.</p></div>
   <div class="row">
-    <a ng-hide="amRegistering" ng-click="amRegistering = true">Click to Register</a>
-    <a ng-show="amRegistering" ng-click="amRegistering = false">Click to Login</a>
+    <a class="button" ng-hide="amRegistering" ng-click="amRegistering = true">Click to Register</a>
+    <a class="button" ng-show="amRegistering" ng-click="amRegistering = false">Click to Login</a>
   </div>
 
   <input type="text" ng-model="user.email" class="form-control" placeholder="Email address">
@@ -12,12 +12,11 @@
   <input type="password" ng-model="user.confirmpassword" ng-show="amRegistering"  class="form-control" ng-class="{fieldInvalid: (user.password != user.confirmpassword)}" placeholder="confirm password">
 
 
-  <a ng-show="amRegistering" ng-click="register()" type="a"
+  <a class="button button-postive" ng-show="amRegistering" ng-click="register()"
     ng-disabled="
     user.email.length == 0 ||
-    !user.password ||
     !(user.password == user.confirmpassword)">Register!</a>
-  <a ng-hide="amRegistering" ng-click="login()" type="a"
+  <a class="button button-postive" ng-hide="amRegistering" ng-click="login()" type="a"
   ng-disabled="!user.email || user.email.length == 0 || !user.password || user.password.length == 0">Login!</a>
 
 </div><!-- /.row -->

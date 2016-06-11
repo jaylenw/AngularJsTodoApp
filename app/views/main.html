@@ -18,14 +18,16 @@
    <div class="jumbotron" ng-show="!userToken">
       <h2>Please Login or Register</h2>
       <!-- button takes user to auth page -->
-      <a ng-click="toAuthpage()">Login/Register</a>
+      <a class="button" ng-click="toAuthpage()">Login/Register</a>
    </div>
    <div class="row">
      <div ng-show="userToken">
-       <a ng-hide="showArchive" ng-click="showArchive = true;">Show archive list</a>
-       <a ng-show="showArchive" ng-click="showArchive = false;">Show todo list</a>
+       <div class="generic">
+         <a class="button" ng-hide="showArchive" ng-click="showArchive = true;">Show archive list</a>
+         <a class="button" ng-show="showArchive" ng-click="showArchive = false;">Show todo list</a>
+       </div>
    </div>
-  </div>
+ </div>
 
 
      <div class="col-xs-12 col-lg-12" ng-show="userToken" ng-repeat="note in todoList | orderBy: '-date' | filter:{archive:showArchive}">
@@ -33,17 +35,17 @@
           <h2>{{note.title}}</h2>
           <p><strong><em>{{note.date}}</em></strong></p>
           <p>{{note.body}}</p>
-          <a ng-hide="note.archive" ng-click="note.archive = true; updateNoteArchive(note._id, note.archive);">Add to Archive</a>
-          <a ng-hide="note.archive" ng-click="isEditting = true">Edit</a>
-          <a ng-show="note.archive" ng-click="note.archive = false; updateNoteArchive(note._id, note.archive);">Restore</a>
+          <a class="button button-postive" ng-hide="note.archive" ng-click="note.archive = true; updateNoteArchive(note._id, note.archive);">Add to Archive</a>
+          <a class="button button-postive" ng-hide="note.archive" ng-click="isEditting = true">Edit</a>
+          <a class="button button-postive" ng-show="note.archive" ng-click="note.archive = false; updateNoteArchive(note._id, note.archive);">Restore</a>
         </div>
         <div class="noteDiv" ng-show="isEditting">
           <p><em>Edit mode</em></p>
           <input type="title" ng-model="note.title" id="titleInput">
           <p><strong><em>{{note.date}}</em></strong></p>
           <input type="textarea" ng-model="note.body" id="textInput">
-          <a ng-hide="note.archive" ng-click="isEditting = false; updateNoteContent(note._id, note.title, note.body)" >Save</a>
-          <a ng-show="note.archive" ng-click="note.archive = false; updateNoteArchive(note._id, note.archive);" >Restore</a>
+          <a class="button button-postive" ng-hide="note.archive" ng-click="isEditting = false; updateNoteContent(note._id, note.title, note.body)" >Save</a>
+          <a class="button button-postive" ng-show="note.archive" ng-click="note.archive = false; updateNoteArchive(note._id, note.archive);" >Restore</a>
         </div>
     </div>
    </div>

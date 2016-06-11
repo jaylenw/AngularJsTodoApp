@@ -116,3 +116,19 @@ body {
   font-size: 18px;
   color: white;
 }
+
+.button {
+  color: white;
+  font-size: 18px;
+  width: 30px;
+  height: 18px;
+  background-color: blue;
+  border-radius: 5px;
+  text-decoration: none;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.button-postive {
+  background-color: green;
+}
