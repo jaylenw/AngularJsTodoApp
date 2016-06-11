@@ -126,6 +126,21 @@ body {
   text-decoration: none;
 }
 
+.button-positive {
+  background: #4ACE35;
+}
+
+.button-auth {
+  margin-top: 10px;
+  margin-bottom: 50px;
+}
+
+.loginFields {
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+
 .button:hover {
-text-decoration: none;
+  text-decoration: none;
+  color: #ffffff;
 }
