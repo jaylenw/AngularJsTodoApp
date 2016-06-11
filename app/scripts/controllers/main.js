@@ -41,8 +41,12 @@ angular.module('todoApp')
 
     //add note to todoList
     $scope.addNote = function(noteTitle, noteBody){
-      var serverNode = Task.create({"title": noteTitle,"body":noteBody ,"token":$scope.userToken}, function(response){
-      ngNotify.set("Syncing Note with the Server.",'success');
+      var serverNode = Task.create({
+        "title": noteTitle,
+        "body":noteBody,
+        "token":$scope.userToken
+      }, function(response){
+          ngNotify.set("Syncing Note with the Server.",'success');
       }, function(err){
           ngNotify.set('Error, Note could not be added. Try again later.','error');
       });
@@ -55,7 +59,12 @@ angular.module('todoApp')
 
     //update (edit) note content in todoList
     $scope.updateNoteContent = function(noteID, noteTitle, noteBody){
-      var payload = {id:noteID, "title": noteTitle, "body": noteBody, "token":$scope.userToken};
+      var payload = {
+        id:noteID,
+        "title": noteTitle,
+        "body": noteBody,
+        "token":$scope.userToken
+      };
       Task.update(payload,function(success){
         ngNotify.set('Note updated Successfully', 'success');
       }, function(err){
@@ -65,7 +74,11 @@ angular.module('todoApp')
 
     //update (edit) note archive status
     $scope.updateNoteArchive = function(noteID, noteArchive){
-      var payload = {id:noteID, "archive":noteArchive, "token":$scope.userToken};
+      var payload = {
+        id:noteID,
+        "archive":noteArchive,
+        "token":$scope.userToken
+      };
       Task.update(payload ,function(success){
         ngNotify.set('Note updated Successfully', 'success');
       }, function(err){

@@ -48,7 +48,6 @@ angular.module('todoApp')
   //allowing the user to login
   $scope.login = function(){
     User.login($scope.user, function(response){
-      ngNotify.set('You are now Logged in. Redirecting...', 'success');
       //storing token from server into browser
       localStorage.setItem("token", response.token);
       //redirecting user to home page
