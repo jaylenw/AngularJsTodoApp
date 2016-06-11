@@ -61,9 +61,9 @@ angular.module('todoApp')
     $scope.updateNoteContent = function(noteID, noteTitle, noteBody){
       var payload = {id:noteID, "title": noteTitle, "body": noteBody, "token":$scope.userToken};
       Task.update(payload,function(success){
-
+        ngNotify.set('Note updated Successfully', 'success');
       }, function(err){
-
+          ngNotify.set('Error updating the Note','error');
       });
     };
 
@@ -72,9 +72,9 @@ angular.module('todoApp')
       console.log(noteID, noteArchive);
       var payload = {id:noteID, "archive":noteArchive, "token":$scope.userToken};
       Task.update(payload ,function(success){
-        console.log("success");
+        ngNotify.set('Note updated Successfully', 'success');
       }, function(err){
-        console.log("error");
+          ngNotify.set('Error updating the Note','error');
       });
     }
 
