@@ -4,7 +4,7 @@
  * @ngdoc function
  * @name todoApp.controller:AboutCtrl
  * @description
- * # AboutCtrl
+ * # AuthCtrl
  * Controller of the todoApp
  */
 angular.module('todoApp')
