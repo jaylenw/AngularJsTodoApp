@@ -41,11 +41,7 @@ angular.module('todoApp')
               }
     });
     //Initializing a blank note for ng-model in jumbotron of index.html
-    $scope.note = {
-      title: "",
-      body: "",
-      date: ""
-    };
+    $scope.note = {};
 
     //add note to todoList
     $scope.addNote = function(noteTitle, noteBody){
@@ -62,8 +58,7 @@ angular.module('todoApp')
       //push temp note to todoList
       $scope.todoList.push(serverNode);
       //reset $scope.note to init values
-      $scope.note.title = "";
-      $scope.note.body = "";
+      $scope.note = {};
     };
 
     //update (edit) note content in todoList
