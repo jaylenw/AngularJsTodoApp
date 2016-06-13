@@ -90,4 +90,8 @@ angular.module('todoApp')
       });
     }
 
+    $scope.formatDate = function(date){
+      return moment.utc(date).toDate().toString();
+    }
+
   });//end of controller

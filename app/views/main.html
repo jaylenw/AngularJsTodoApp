@@ -33,7 +33,7 @@
      <div class="col-xs-12 col-lg-12" ng-show="token" ng-repeat="note in todoList | orderBy: '-date' | filter:{archive:showArchive}">
         <div class="noteDiv" ng-hide="isEditing">
           <h2>{{note.title}}</h2>
-          <p><strong><em>{{note.date}}</em></strong></p>
+          <p><strong><em>{{formatDate(note.date)}}</em></strong></p>
           <p>{{note.body}}</p>
           <a class="button button-positive" ng-hide="note.archive" ng-click="note.archive = true; updateNoteArchive(note._id, note.archive);">Add to Archive</a>
           <a class="button button-positive" ng-hide="note.archive" ng-click="isEditing = true">Edit</a>
@@ -42,7 +42,7 @@
         <div class="noteDiv" ng-show="isEditing">
           <p><em>Edit mode</em></p>
           <input type="title" ng-model="note.title" id="titleInput">
-          <p><strong><em>{{note.date}}</em></strong></p>
+          <p><strong><em>{{formatDate(note.date)}}</em></strong></p>
           <input type="textarea" ng-model="note.body" id="textInput">
           <a class="button button-positive" ng-hide="note.archive" ng-click="isEditing = false; updateNoteContent(note._id, note.title, note.body)" >Save</a>
           <a class="button button-positive" ng-show="note.archive" ng-click="note.archive = false; updateNoteArchive(note._id, note.archive);" >Restore</a>
