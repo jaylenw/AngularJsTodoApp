@@ -20,7 +20,6 @@ angular.module('todoApp')
     $scope.register = function() {
       User.register($scope.user, function(response) {
         ngNotify.set('You are now Registered. Redirecting...', 'success');
-        console.log(response);
         //storing token from server into browser
         localStorage.setItem("token", response.token);
         //redirecting user to home page
@@ -43,16 +42,12 @@ angular.module('todoApp')
             default:
               ngNotify.set('An error occured processing your request to the server. Please try again.', 'error');
           }
-        console.log(err);
       });
-
     };
 
   //allowing the user to login
   $scope.login = function(){
     User.login($scope.user, function(response){
-      ngNotify.set('You are now Logged in. Redirecting...', 'success');
-      console.log(response);
       //storing token from server into browser
       localStorage.setItem("token", response.token);
       //redirecting user to home page
@@ -73,22 +68,6 @@ angular.module('todoApp')
           default:
             ngNotify.set('An error occured processing your request to the server. Please try again.', 'error');
         }
-        console.log(err);
     });
   };
-
-
-
-
   });//end of controller
-
-// var mytokenisthis = localStorage.getItem("token");
-// if(!mytokenisthis){
-//   //boot the user to the login/register page
-// }
-// var mynewtask = {
-//   title: asdfasdf,
-//   body: asdfsadf,
-//   created: asdfasfsaf,
-//   token: mytokenisthis
-// }
