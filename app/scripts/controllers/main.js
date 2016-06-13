@@ -30,7 +30,11 @@ angular.module('todoApp')
     //making an object of todos notes in the object of todos list
     $scope.todoList = Task.get({"token":$scope.userToken}, function(response){
     }, function(err){
-        ngNotify.set("Error occured connecting with the Server.")
+        switch (err) {
+          case 500:
+            ngNotify.set("Error occured connecting with the Server.");
+            break;
+        }
     });
     //Initializing a blank note for ng-model in jumbotron of index.html
     $scope.note = {
