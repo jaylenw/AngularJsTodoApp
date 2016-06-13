@@ -28,13 +28,17 @@ angular.module('todoApp')
     $scope.showArchive = false;
 
     //making an object of todos notes in the object of todos list
-    $scope.todoList = Task.get({"token":$scope.token}, function(response){
-    }, function(err){
-        switch (err) {
-          case 500:
-            ngNotify.set("Error occured connecting with the Server.");
-            break;
-        }
+    $scope.todoList = Task.get(
+      {
+        "token":$scope.token
+      },
+      function(response){
+        }, function(err){
+              switch (err) {
+                case 500:
+                  ngNotify.set("Error occured connecting with the Server.");
+                break;
+              }
     });
     //Initializing a blank note for ng-model in jumbotron of index.html
     $scope.note = {
@@ -45,14 +49,15 @@ angular.module('todoApp')
 
     //add note to todoList
     $scope.addNote = function(noteTitle, noteBody){
-      var serverNode = Task.create({
-        "title": noteTitle,
-        "body":noteBody,
-        "token":$scope.token
-      }, function(response){
-          ngNotify.set("Syncing Note with the Server.",'success');
-      }, function(err){
-          ngNotify.set('Error, Note could not be added. Try again later.','error');
+      var serverNode = Task.create(
+        {
+          "title": noteTitle,
+          "body":noteBody,
+          "token":$scope.token
+        }, function(response){
+            ngNotify.set("Syncing Note with the Server.",'success');
+          }, function(err){
+              ngNotify.set('Error, Note could not be added. Try again later.','error');
       });
       //push temp note to todoList
       $scope.todoList.push(serverNode);
