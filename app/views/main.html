@@ -1,7 +1,7 @@
 <div class="row row-offcanvas row-offcanvas-right">
 
  <div class="col-xs-12 col-lg-12">
-   <div class="jumbotron" ng-show="userToken">
+   <div class="jumbotron" ng-show="token">
       <h2>Add a Note</h2>
       <form name="noteForm" novalidate>
         <div class="form-group">
@@ -15,13 +15,13 @@
         <a ng-show="noteForm.$valid" ng-click="addNote(note.title, note.body)">Save</a>
       </form>
    </div>
-   <div class="jumbotron" ng-show="!userToken">
+   <div class="jumbotron" ng-show="!token">
       <h2>Please Login or Register</h2>
       <!-- button takes user to auth page -->
-      <a class="button" ng-click="toAuthpage()">Login/Register</a>
+      <a class="button" ng-click="goTo('#/auth')">Login/Register</a>
    </div>
    <div class="row">
-     <div ng-show="userToken">
+     <div ng-show="token">
        <div class="generic">
          <a class="button" ng-hide="showArchive" ng-click="showArchive = true;">Show archive list</a>
          <a class="button" ng-show="showArchive" ng-click="showArchive = false;">Show todo list</a>
@@ -30,7 +30,7 @@
  </div>
 
 
-     <div class="col-xs-12 col-lg-12" ng-show="userToken" ng-repeat="note in todoList | orderBy: '-date' | filter:{archive:showArchive}">
+     <div class="col-xs-12 col-lg-12" ng-show="token" ng-repeat="note in todoList | orderBy: '-date' | filter:{archive:showArchive}">
         <div class="noteDiv" ng-hide="isEditting">
           <h2>{{note.title}}</h2>
           <p><strong><em>{{note.date}}</em></strong></p>

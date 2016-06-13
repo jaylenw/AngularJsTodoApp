@@ -19,9 +19,9 @@ angular.module('todoApp')
     //Getting user token and adding it to scope
     $scope.token = localStorage.getItem("token");
 
-    //Redirect user to Authentication page
-    $scope.toAuthpage = function(){
-      $window.location.href = '#/auth';
+    //Redirect user to a passed in url page
+    $scope.goTo = function(url){
+      $window.location.href = url;
     }
 
     //Initializing variable to false for showing archive notes
