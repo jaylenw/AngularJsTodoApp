@@ -17,7 +17,7 @@ angular.module('todoApp')
   .controller('MainCtrl', function ($scope, $window, Task, ngNotify) {
 
     //Getting user token and adding it to scope
-    $scope.userToken = localStorage.getItem("token");
+    $scope.token = localStorage.getItem("token");
 
     //Redirect user to Authentication page
     $scope.toAuthpage = function(){
@@ -28,7 +28,7 @@ angular.module('todoApp')
     $scope.showArchive = false;
 
     //making an object of todos notes in the object of todos list
-    $scope.todoList = Task.get({"token":$scope.userToken}, function(response){
+    $scope.todoList = Task.get({"token":$scope.token}, function(response){
     }, function(err){
         switch (err) {
           case 500:
@@ -48,7 +48,7 @@ angular.module('todoApp')
       var serverNode = Task.create({
         "title": noteTitle,
         "body":noteBody,
-        "token":$scope.userToken
+        "token":$scope.token
       }, function(response){
           ngNotify.set("Syncing Note with the Server.",'success');
       }, function(err){
@@ -67,7 +67,7 @@ angular.module('todoApp')
         id:noteID,
         "title": noteTitle,
         "body": noteBody,
-        "token":$scope.userToken
+        "token":$scope.token
       };
       Task.update(payload,function(success){
         ngNotify.set('Note updated Successfully', 'success');
@@ -81,7 +81,7 @@ angular.module('todoApp')
       var payload = {
         id:noteID,
         "archive":noteArchive,
-        "token":$scope.userToken
+        "token":$scope.token
       };
       Task.update(payload ,function(success){
         ngNotify.set('Note updated Successfully', 'success');

@@ -1,6 +1,6 @@
 
 <div class="row">
-  <div class="authText" ng-if="currentSavedToken"> <p>You are already logged in. Register or Login to access another account.</p></div>
+  <div class="authText" ng-if="token"> <p>You are already logged in. Register or Login to access another account.</p></div>
   <div class="row">
     <a class="button" ng-hide="amRegistering" ng-click="amRegistering = true">Click to Register</a>
     <a class="button" ng-show="amRegistering" ng-click="amRegistering = false">Click to Login</a>
