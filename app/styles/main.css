@@ -144,3 +144,7 @@ body {
   text-decoration: none;
   color: #ffffff;
 }
+
+.searchLabel {
+  margin-left: 50px;
+}
