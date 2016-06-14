@@ -24,7 +24,7 @@ Running `grunt test` will run the unit tests with karma.
 
 This app depends on the backend to run properly.
 
-1. The backend for this app is found here at his repo: https://github.com/julianpoy/jaylenBackend
+1. The backend for this app is found here at this repo: https://github.com/julianpoy/jaylenBackend
 
 2. To run the backend, first install forever from npm, `npm install forever`.  You can use [forever](https://www.npmjs.com/package/forever) to run the backend server and autorestart it.
 
