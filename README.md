@@ -17,6 +17,7 @@ Running `grunt test` will run the unit tests with karma.
 ## Production Deployment
 
 1. Run `grunt build` in the root of the project folder.
+
 2. Copy the files in the `dist` folder onto a webserver.
 
 ## Setting up the Backend
