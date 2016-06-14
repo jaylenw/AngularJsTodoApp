@@ -25,12 +25,13 @@
        <div class="generic">
          <a class="button" ng-hide="showArchive" ng-click="showArchive = true;">Show archive list</a>
          <a class="button" ng-show="showArchive" ng-click="showArchive = false;">Show todo list</a>
+         <label>Search: <input ng-model="searchText"></label>
        </div>
    </div>
  </div>
 
 
-     <div class="col-xs-12 col-lg-12" ng-show="token" ng-repeat="note in todoList | orderBy: '-date' | filter:{archive:showArchive}">
+     <div class="col-xs-12 col-lg-12" ng-show="token" ng-repeat="note in todoList | orderBy: '-date' | filter:{archive:showArchive} | filter: searchText">
         <div class="noteDiv" ng-hide="isEditing">
           <h2>{{note.title}}</h2>
           <p><strong><em>{{formatDate(note.date)}}</em></strong></p>
