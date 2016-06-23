@@ -1,17 +1,17 @@
 angular.module('todoApp')
 .factory("User",['$resource', function($resource){
-  return $resource("http://dev.kondeo.com:3020/users", {},{
+  return $resource("http://todo.jaylenwimbish.com:3000/users", {},{
     login:{
       method:"POST",
       params:{},
       isArray: false,
-      url: "http://dev.kondeo.com:3020/users/login"
+      url: "http://todo.jaylenwimbish.com:3000/users/login"
     },
     register:{
       method:"POST",
       params:{},
       isArray: false,
-      url: "http://dev.kondeo.com:3020/users/register"
+      url: "http://todo.jaylenwimbish.com:3000/users/register"
     }
   })
 }]);
