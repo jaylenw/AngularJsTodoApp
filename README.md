@@ -65,4 +65,8 @@ This app depends on the backend to run properly.
 
 6. You should now be able to get and post tasks to the server after registering an account through your site. 
 
+--------------------------------------------------------------------------------------------------------------
+
+Pull requests and issues are welcomed.
+
 
