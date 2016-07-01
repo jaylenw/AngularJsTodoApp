@@ -19,26 +19,26 @@ Note: You will not be able to post anything until the backend is setup correctly
 ## Running in Production
 
 1. Change the javascript files in /app/scripts/services/, task.js and user.js to have your url and port number
-   that will be directing requests to your backend. Do not change anything after the port number. Forever (server we will be using) by defualt listens to port 3000. Replace "yourdomain.com" with the domain you will be using. http://yourdomain.com/3000
+   that will be directing requests to your backend. Do not change anything after the port number. Forever (server we will be using) by defualt listens to port 3000. Replace "yourdomain.com" with the domain you will be using. It will look like this, "http://yourdomain.com/3000"
 
 1. Run `grunt build` in the root of the project folder.
 
 2. Copy the files in the `dist` folder onto a webserver to serve the static files. In this case, here is an example nginx config file.
 
-      #yourdomain.com
-    
-      server {
-    
-            listen 80; #listening on port 80
-            server_name yourdomain.com; #remember to make modifications to hosts file in /etc/hosts
-            root /home/exampleUser/AngularTodoPRJ/dist;
-            index index.html;
-            location / {
-    
-                    error_page 404 /index.html; #added error page redirection
-    
-                    }
-      }
+        #yourdomain.com
+      
+        server {
+      
+              listen 80; #listening on port 80
+              server_name yourdomain.com; #remember to make modifications to hosts file in /etc/hosts
+              root /home/exampleUser/AngularTodoPRJ/dist;
+              index index.html;
+              location / {
+      
+                      error_page 404 /index.html; #added error page redirection
+      
+                      }
+        }
 
 
 ## Setting up the Backend
