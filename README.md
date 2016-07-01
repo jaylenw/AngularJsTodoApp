@@ -47,7 +47,7 @@ Note: You will not be able to post anything until the backend is setup correctly
         }
 
 
-## Setting up the Backend
+### Setting up the Backend
 
 This app depends on the backend to run properly.
 
