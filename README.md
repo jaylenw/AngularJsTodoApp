@@ -1,5 +1,11 @@
 #AngularJs Todo App
 
+##Features
+
+* User Login & Registration
+* Add and archive notes
+* Mobile Friendly
+
 ## Build, Testing, & Development
 
 1. Need to have [Nodejs](https://nodejs.org/en/) and [NPM](https://www.npmjs.com/) installed
