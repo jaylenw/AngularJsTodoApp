@@ -1,6 +1,6 @@
 angular.module('todoApp')
 .factory("Task",['$resource', function($resource){
-  return $resource("http://todo.jaylenwimbish.com:3000/tasks", {},{
+  return $resource("http://yourdomain:3000/tasks", {},{
     get:{
       method:"GET",
       params:{},
@@ -15,7 +15,7 @@ angular.module('todoApp')
       method:"PUT",
       params:{ id: '@id' },
       isArray: false,
-      url: "http://todo.jaylenwimbish.com:3000/tasks/:id"
+      url: "http://yourdomain:3000/tasks/:id"
     }
   })
 }]);
