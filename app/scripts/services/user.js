@@ -5,13 +5,13 @@ angular.module('todoApp')
       method:"POST",
       params:{},
       isArray: false,
-      url: "http://yourdomain:3000/users/login"
+      url: "http://yourdomain.com:3000/users/login"
     },
     register:{
       method:"POST",
       params:{},
       isArray: false,
-      url: "http://yourdomain:3000/users/register"
+      url: "http://yourdomain.com:3000/users/register"
     }
   })
 }]);
