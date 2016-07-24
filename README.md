@@ -8,7 +8,7 @@
 
 ## Build, Testing, & Development
 
-1. Need to have [Nodejs](https://nodejs.org/en/) and [NPM](https://www.npmjs.com/) installed
+1. Need to have [Nodejs](https://nodejs.org/en/), [NPM](https://www.npmjs.com/), and [Bower](https://bower.io/) installed
    on your system globally.
 
 2. Clone this repo.
