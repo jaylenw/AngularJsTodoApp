@@ -12,7 +12,7 @@
           <label>Text</label>
           <input type="textarea" ng-model="note.body" class="form-control ng-dirty ng-valid" id="textInput" placeholder="Enter Note Description" required>
         </div>
-        <a ng-show="noteForm.$valid" ng-click="addNote(note.title, note.body)">Save</a>
+        <a class="button" ng-show="noteForm.$valid" ng-click="addNote(note.title, note.body)">Save</a>
       </form>
    </div>
    <div class="jumbotron" ng-show="!token">
