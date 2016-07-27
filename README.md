@@ -1,5 +1,7 @@
 #AngularJs Todo App
 
+Android version of this app is in development [here](https://github.com/jaylenw/IonicTodoApp).
+
 ##Features
 
 * User Login & Registration
