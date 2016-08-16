@@ -8,12 +8,12 @@
 
 ## Build, Testing, & Development
 
-1. Need to have [Nodejs](https://nodejs.org/en/), [NPM](https://www.npmjs.com/), [Grunt](http://gruntjs.com/), and [Bower](https://bower.io/) installed on your system globally. If running a Debian/Ubuntu system and you do not have the packages installed globaly, run these commands below:
+1. Need to have [Nodejs](https://nodejs.org/en/), [NPM](https://www.npmjs.com/), [Grunt](http://gruntjs.com/), and [Bower](https://bower.io/) installed on your system globally. If running a Debian/Ubuntu system and you do not have the packages installed globally, run these commands below:
 
-        sudo apt-get update  
-        sudo apt-get install nodejs  
+        sudo apt update  
+        sudo apt install nodejs  
         sudo ln -s /usr/bin/nodejs /usr/bin/node  
-        sudo apt-get install npm
+        sudo apt install npm
         sudo npm install -g npm
         sudo npm install -g bower
         sudo npm install -g grunt-cli
@@ -25,7 +25,7 @@
 4. Run `grunt serve` for live preview. You can then browse the site after opening your browser to the url that grunt has informed you.
 
 
-Note: You will not be able to register or login with an acount until the backend is setup correctly.
+Note: You will not be able to register or login with an account until the backend is setup correctly.
 
 
 ## Running in Production
@@ -63,9 +63,9 @@ This app depends on the backend to run properly.
    You can use [forever](https://www.npmjs.com/package/forever) to run the backend server and autorestart it.
 
 3. Next, install mongodb on your system globally and have it running. If on a Ubuntu/Debian system, you would run
-   `sudo apt-get install mongodb`.
+   `sudo apt install mongodb`.
 
-4. After having cloned the repo linked above and are in the root of the folder, run `npm install`. 
+4. After having cloned the repo linked above and are in the root of the folder, run `npm install`.
 
 5. Use forever to start the server, run `forever start bin/www`.
 
