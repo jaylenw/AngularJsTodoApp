@@ -30,8 +30,8 @@ Note: You will not be able to register or login with an account until the backen
 
 ## Running in Production
 
-1. Change the javascript files in /app/scripts/services/, task.js and user.js to have your url and port number
-   that will be directing requests to your backend. Do not change anything after the port number. Forever (server we will be using) by default listens to port 3000. Replace "yourdomain.com" with the domain you will be using. It will look like this, "http://yourdomain.com/3000"
+1. Change the javascript file in /app/scripts/services/, config.js to have your                     url and port number
+   that will be directing requests to your backend for the `_apiUrl` variable. Do not change anything after the port number. Forever (server we will be using) by default listens to port 3000. Replace "yourdomain.com" with the domain you will be using. It will look like this, "http://yourdomain.com/3000"
 
 1. Run `grunt build` in the root of the project folder.
 
