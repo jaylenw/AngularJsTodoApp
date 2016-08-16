@@ -73,6 +73,9 @@ This app depends on the backend to run properly.
 
 6. You should now be able to get and post tasks to the server after registering an account through your site.
 
+7. If you need to kill `forever` for any reasons, run `forever list`. You will then see a list of all `forever` processes. Kill the `forever` process you want
+by identifying the `pid` and killing it by running `forever stop pidNUM` where pidNUM is the pid number is the process you would like to kill.
+
 --------------------------------------------------------------------------------------------------------------
 
 Pull requests and issues are welcomed.
