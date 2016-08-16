@@ -1,6 +1,6 @@
 angular.module('todoApp')
-.factory("Task",['$resource', function($resource){
-  return $resource("http://yourdomain.com:3000/tasks", {},{
+.factory("Task",['$resource', 'Config', function($resource, Config){
+  return $resource(Config.getAPI() + "/tasks", {},{
     get:{
       method:"GET",
       params:{},
@@ -15,7 +15,7 @@ angular.module('todoApp')
       method:"PUT",
       params:{ id: '@id' },
       isArray: false,
-      url: "http://yourdomain.com:3000/tasks/:id"
+      url: Config.getAPI() + "/tasks/:id"
     }
   })
 }]);

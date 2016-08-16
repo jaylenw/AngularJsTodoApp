@@ -1,17 +1,17 @@
 angular.module('todoApp')
-.factory("User",['$resource', function($resource){
-  return $resource("http://yourdomain.com:3000/users", {},{
+.factory("User",['$resource', 'Config', function($resource, Config){
+  return $resource(Config.getAPI() + "/users", {},{
     login:{
       method:"POST",
       params:{},
       isArray: false,
-      url: "http://yourdomain.com:3000/users/login"
+      url: Config.getAPI() + "/users/login"
     },
     register:{
       method:"POST",
       params:{},
       isArray: false,
-      url: "http://yourdomain.com:3000/users/register"
+      url: Config.getAPI() + "/users/register"
     }
   })
 }]);
