@@ -24,22 +24,9 @@ angular.module('todoApp')
       $window.location.href = url;
     }
 
-    //Initializing variable to false for showing archive notes
-    $scope.showArchive = false;
+    //Run on page load to obtain tasks from server
+    getTasks();
 
-    //making an object of todos notes in the object of todos list
-    $scope.todoList = Task.get(
-      {
-        "token":$scope.token
-      },
-      function(response){
-        }, function(err){
-              switch (err) {
-                case 500:
-                  ngNotify.set("Error occured connecting with the Server.");
-                break;
-              }
-    });
     //Initializing a blank note for ng-model in jumbotron of index.html
     $scope.note = {};
 
@@ -93,6 +80,23 @@ angular.module('todoApp')
     //function to return more of a nice date format
     $scope.formatDate = function(date){
       return moment.utc(date).toDate().toString();
+    }
+
+    //Obtain task from server and adding it to todolist
+    function getTasks(){
+      Task.get(
+        {
+          "token":$scope.token
+        },
+        function(response){
+          $scope.todoList = response;
+          }, function(err){
+                switch (err) {
+                  case 500:
+                    ngNotify.set("Error occured connecting with the Server.");
+                  break;
+                }
+      });
     }
 
   });//end of controller
