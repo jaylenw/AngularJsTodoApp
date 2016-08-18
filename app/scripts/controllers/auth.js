@@ -20,7 +20,6 @@ angular.module('todoApp')
     $scope.register = function() {
       var payload = $scope.user;
       User.register(payload, function(response) {
-        ngNotify.set('You are now Registered. Redirecting...', 'success');
         //storing token from server into browser
         localStorage.setItem("token", response.token);
         //redirecting user to home page
@@ -29,19 +28,19 @@ angular.module('todoApp')
 
           switch(err.status){
             case 406:
-              ngNotify.set(' Entered Email address is not valid. Please enter a valid Email address.', 'error');
+              ngNotify.set(' Entered Email Address is not Valid. Please Enter a Valid Email Address.', 'error');
               break;
             case 409:
-              ngNotify.set('Entered Email has already been registerd. Please enter another Email address.', 'error');
+              ngNotify.set('Entered Email has already been Registerd. Please Enter another Email Address.', 'error');
               break;
             case 412:
-              ngNotify.set('Entered Email address and Password were not entered successfully. Please enter them again.', 'error');
+              ngNotify.set('Entered Email address and Password were not Entered Successfully. Please Enter them Again.', 'error');
               break;
             case 500:
-              ngNotify.set('We could not save your account. Please try again.', 'error');
+              ngNotify.set('We Could not Save Your Account. Please try Again.', 'error');
               break;
             default:
-              ngNotify.set('An error occured processing your request to the server. Please try again.', 'error');
+              ngNotify.set('An Error Occured Processing Your Request to the Server. Please try Again.', 'error');
           }
       });
     };
@@ -59,16 +58,16 @@ angular.module('todoApp')
 
         switch (err.status) {
           case 401:
-            ngNotify.set('Entered Email address or Password are incorrect. Please try again.', 'error');
+            ngNotify.set('Entered Email address or Password are Incorrect. Please try Again.', 'error');
             break;
           case 412:
-            ngNotify.set('Please enter an email address and password and try again.', 'error');
+            ngNotify.set('Please Enter an Email Address and Password and try Again.', 'error');
             break;
           case 500:
-            ngNotify.set('Could not find your account. Please enter your credentials again.', 'error');
+            ngNotify.set('Could not Find Your Account. Please Enter Your Credentials Again.', 'error');
             break;
           default:
-            ngNotify.set('An error occured processing your request to the server. Please try again.', 'error');
+            ngNotify.set('An Error Occured Processing Your Request to the Server. Please try Again.', 'error');
         }
     });
   };
