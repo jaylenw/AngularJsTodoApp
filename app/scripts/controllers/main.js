@@ -48,7 +48,7 @@ angular.module('todoApp')
           $scope.note = {};
           ngNotify.set("Syncing Note with the Server.",'success');
           }, function(err){
-               ngNotify.set('Error, Note could not be added. Try again later.','error');
+               ngNotify.set('Error, Note Could not be Added. Try again later.','error');
       });
     };
 
@@ -75,12 +75,13 @@ angular.module('todoApp')
         "token": $scope.token
       };
       Task.update(payload ,function(success){
-        ngNotify.set('Note updated Successfully', 'success');
+        ngNotify.set('Note Updated Successfully', 'success');
       }, function(err){
-          ngNotify.set('Error updating the Note','error');
+          ngNotify.set('Error Updating the Note','error');
       });
     }
 
+    //Delete a specific note
     $scope.deleteNote = function(noteID){
       var payload = {
         "id": noteID,
@@ -113,7 +114,7 @@ angular.module('todoApp')
           }, function(err){
                 switch (err) {
                   case 500:
-                    ngNotify.set("Error occured connecting with the Server.");
+                    ngNotify.set("Error Occured Connecting with the Server");
                   break;
                 }
       });
