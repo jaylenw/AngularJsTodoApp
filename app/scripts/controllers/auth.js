@@ -18,7 +18,8 @@ angular.module('todoApp')
 
     //registering the user
     $scope.register = function() {
-      User.register($scope.user, function(response) {
+      var payload = $scope.user;
+      User.register(payload, function(response) {
         ngNotify.set('You are now Registered. Redirecting...', 'success');
         //storing token from server into browser
         localStorage.setItem("token", response.token);
@@ -47,7 +48,8 @@ angular.module('todoApp')
 
   //allowing the user to login
   $scope.login = function(){
-    User.login($scope.user, function(response){
+    var payload = $scope.user;
+    User.login(payload, function(response){
       //storing token from server into browser
       localStorage.setItem("token", response.token);
       //redirecting user to home page
