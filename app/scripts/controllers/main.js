@@ -24,7 +24,7 @@ angular.module('todoApp')
       $window.location.href = url;
     }
 
-    //Does not show archive notes
+    //Initializing variable to not show archive notes initially
     $scope.showArchive = false;
 
     //Run on page load to obtain tasks from server
