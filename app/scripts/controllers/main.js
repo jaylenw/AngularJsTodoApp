@@ -24,6 +24,9 @@ angular.module('todoApp')
       $window.location.href = url;
     }
 
+    //Does not show archive notes
+    $scope.showArchive = false;
+
     //Run on page load to obtain tasks from server
     getTasks();
 
@@ -32,19 +35,20 @@ angular.module('todoApp')
 
     //add note to todoList
     $scope.addNote = function(noteTitle, noteBody){
-      var serverNode = Task.create(
-        {
-          "title": noteTitle,
-          "body":noteBody,
-          "token":$scope.token
-        }, function(response){
-            //push temp note to local todoList
-            $scope.todoList.push(serverNode);
-            //reset $scope.note to init values
-            $scope.note = {};
-            ngNotify.set("Syncing Note with the Server.",'success');
+      var payload =  {
+        "title": noteTitle,
+        "body": noteBody,
+        "token": $scope.token
+      }
+      Task.create(payload,
+        function(response){
+          //Get all tasks from server
+          getTasks();
+          //reset $scope.note to init values
+          $scope.note = {};
+          ngNotify.set("Syncing Note with the Server.",'success');
           }, function(err){
-              ngNotify.set('Error, Note could not be added. Try again later.','error');
+               ngNotify.set('Error, Note could not be added. Try again later.','error');
       });
     };
 
@@ -54,7 +58,7 @@ angular.module('todoApp')
         id:noteID,
         "title": noteTitle,
         "body": noteBody,
-        "token":$scope.token
+        "token": $scope.token
       };
       Task.update(payload,function(success){
         ngNotify.set('Note updated Successfully', 'success');
@@ -67,8 +71,8 @@ angular.module('todoApp')
     $scope.updateNoteArchive = function(noteID, noteArchive){
       var payload = {
         id:noteID,
-        "archive":noteArchive,
-        "token":$scope.token
+        "archive": noteArchive,
+        "token": $scope.token
       };
       Task.update(payload ,function(success){
         ngNotify.set('Note updated Successfully', 'success');
@@ -82,11 +86,11 @@ angular.module('todoApp')
       return moment.utc(date).toDate().toString();
     }
 
-    //Obtain task from server and adding it to todolist
+    //Obtain tasks from server and adding it to todolist
     function getTasks(){
       Task.get(
         {
-          "token":$scope.token
+          "token": $scope.token
         },
         function(response){
           $scope.todoList = response;
