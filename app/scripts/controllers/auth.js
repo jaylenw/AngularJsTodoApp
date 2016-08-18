@@ -72,4 +72,27 @@ angular.module('todoApp')
         }
     });
   };
-  });//end of controller
+
+  //allowing the user to logout
+  $scope.logout = function(){
+    var payload = {
+      "token": $scope.token
+    }
+    User.logout(payload,
+      function(success){
+        //Removing Local Token From Browser
+        localStorage.removeItem("token");
+        //redirecting user to home page
+        $window.location.href = '/';
+      },
+      function(err){
+        switch(err.status){
+          case 500:
+            ngNotify.set('Error occured Logging Out', 'error');
+          default:
+            ngNotify.set('An Error Occured Processing Your Request. Please try Again.', 'error');
+        }
+      }
+    );
+  }
+});//end of controller
