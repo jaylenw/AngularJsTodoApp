@@ -38,14 +38,14 @@ angular.module('todoApp')
           "body":noteBody,
           "token":$scope.token
         }, function(response){
+            //push temp note to local todoList
+            $scope.todoList.push(serverNode);
+            //reset $scope.note to init values
+            $scope.note = {};
             ngNotify.set("Syncing Note with the Server.",'success');
           }, function(err){
               ngNotify.set('Error, Note could not be added. Try again later.','error');
       });
-      //push temp note to todoList
-      $scope.todoList.push(serverNode);
-      //reset $scope.note to init values
-      $scope.note = {};
     };
 
     //update (edit) note content in todoList
