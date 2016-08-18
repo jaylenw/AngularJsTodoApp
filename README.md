@@ -4,8 +4,8 @@ Android version of this app is in development [here](https://github.com/jaylenw/
 
 ##Features
 
-* User Login & Registration
-* Add and archive notes
+* User Login, Logout, & Registration
+* Add, Delete, and Archive Notes
 * Mobile Friendly
 
 ## Build, Testing, & Development
