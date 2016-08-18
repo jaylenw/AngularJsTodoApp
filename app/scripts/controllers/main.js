@@ -55,7 +55,7 @@ angular.module('todoApp')
     //update (edit) note content in todoList
     $scope.updateNoteContent = function(noteID, noteTitle, noteBody){
       var payload = {
-        id:noteID,
+        "id": noteID,
         "title": noteTitle,
         "body": noteBody,
         "token": $scope.token
@@ -70,7 +70,7 @@ angular.module('todoApp')
     //update (edit) note archive status
     $scope.updateNoteArchive = function(noteID, noteArchive){
       var payload = {
-        id:noteID,
+        "id": noteID,
         "archive": noteArchive,
         "token": $scope.token
       };
@@ -79,6 +79,22 @@ angular.module('todoApp')
       }, function(err){
           ngNotify.set('Error updating the Note','error');
       });
+    }
+
+    $scope.deleteNote = function(noteID){
+      var payload = {
+        "id": noteID,
+        "token": $scope.token
+      }
+      Task.delete(payload,
+        function(success){
+          var index = $scope.todoList.map(function(e) { return e._id; }).indexOf(noteID);
+          $scope.todoList.splice(index, 1);
+          ngNotify.set('Note Deleted Successfully', 'success');
+        },
+        function(err){
+          ngNotify.set('Error Deleting the Note', 'error');
+        });
     }
 
     //function to return more of a nice date format
