@@ -24,75 +24,100 @@ angular.module('todoApp')
       $window.location.href = url;
     }
 
-    //Initializing variable to false for showing archive notes
+    //Initializing variable to not show archive notes initially
     $scope.showArchive = false;
 
-    //making an object of todos notes in the object of todos list
-    $scope.todoList = Task.get(
-      {
-        "token":$scope.token
-      },
-      function(response){
-        }, function(err){
-              switch (err) {
-                case 500:
-                  ngNotify.set("Error occured connecting with the Server.");
-                break;
-              }
-    });
+    //Run on page load to obtain tasks from server
+    getTasks();
+
     //Initializing a blank note for ng-model in jumbotron of index.html
     $scope.note = {};
 
     //add note to todoList
     $scope.addNote = function(noteTitle, noteBody){
-      var serverNode = Task.create(
-        {
-          "title": noteTitle,
-          "body":noteBody,
-          "token":$scope.token
-        }, function(response){
-            ngNotify.set("Syncing Note with the Server.",'success');
+      var payload =  {
+        "title": noteTitle,
+        "body": noteBody,
+        "token": $scope.token
+      }
+      Task.create(payload,
+        function(response){
+          //Get all tasks from server
+          getTasks();
+          //reset $scope.note to init values
+          $scope.note = {};
+          ngNotify.set("Syncing Note with the Server",'success');
           }, function(err){
-              ngNotify.set('Error, Note could not be added. Try again later.','error');
+               ngNotify.set('Error, Note Could Not be Added. Please try Again Later.','error');
       });
-      //push temp note to todoList
-      $scope.todoList.push(serverNode);
-      //reset $scope.note to init values
-      $scope.note = {};
     };
 
     //update (edit) note content in todoList
     $scope.updateNoteContent = function(noteID, noteTitle, noteBody){
       var payload = {
-        id:noteID,
+        "id": noteID,
         "title": noteTitle,
         "body": noteBody,
-        "token":$scope.token
+        "token": $scope.token
       };
       Task.update(payload,function(success){
-        ngNotify.set('Note updated Successfully', 'success');
+        ngNotify.set('Note Updated Successfully', 'success');
       }, function(err){
-          ngNotify.set('Error updating the Note','error');
+          ngNotify.set('Error Updating the Note','error');
       });
     };
 
     //update (edit) note archive status
     $scope.updateNoteArchive = function(noteID, noteArchive){
       var payload = {
-        id:noteID,
-        "archive":noteArchive,
-        "token":$scope.token
+        "id": noteID,
+        "archive": noteArchive,
+        "token": $scope.token
       };
       Task.update(payload ,function(success){
-        ngNotify.set('Note updated Successfully', 'success');
+        ngNotify.set('Note Updated Successfully', 'success');
       }, function(err){
-          ngNotify.set('Error updating the Note','error');
+          ngNotify.set('Error Updating the Note','error');
       });
+    }
+
+    //Delete a specific note
+    $scope.deleteNote = function(noteID){
+      var payload = {
+        "id": noteID,
+        "token": $scope.token
+      }
+      Task.delete(payload,
+        function(success){
+          var index = $scope.todoList.map(function(e) { return e._id; }).indexOf(noteID);
+          $scope.todoList.splice(index, 1);
+          ngNotify.set('Note Deleted Successfully', 'success');
+        },
+        function(err){
+          ngNotify.set('Error Deleting the Note', 'error');
+        });
     }
 
     //function to return more of a nice date format
     $scope.formatDate = function(date){
       return moment.utc(date).toDate().toString();
+    }
+
+    //Obtain tasks from server and adding it to todolist
+    function getTasks(){
+      Task.get(
+        {
+          "token": $scope.token
+        },
+        function(response){
+          $scope.todoList = response;
+          }, function(err){
+                switch (err) {
+                  case 500:
+                    ngNotify.set("Error Occured Connecting with the Server");
+                  break;
+                }
+      });
     }
 
   });//end of controller

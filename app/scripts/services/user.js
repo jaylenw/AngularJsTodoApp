@@ -12,6 +12,12 @@ angular.module('todoApp')
       params:{},
       isArray: false,
       url: Config.getAPI() + "/users/register"
+    },
+    logout:{
+      method:"POST",
+      params:{},
+      isArray: false,
+      url: Config.getAPI() + "/users/logout"
     }
   })
 }]);

@@ -16,6 +16,12 @@ angular.module('todoApp')
       params:{ id: '@id' },
       isArray: false,
       url: Config.getAPI() + "/tasks/:id"
+    },
+    delete:{
+      method: "DELETE",
+      params:{ id: '@id'},
+      isArray: false,
+      url: Config.getAPI() + "/tasks/:id"
     }
   })
 }]);
