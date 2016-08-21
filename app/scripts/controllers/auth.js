@@ -31,7 +31,7 @@ angular.module('todoApp')
               ngNotify.set(' Entered Email Address is not Valid. Please Enter a Valid Email Address.', 'error');
               break;
             case 409:
-              ngNotify.set('Entered Email has already been Registerd. Please Enter another Email Address.', 'error');
+              ngNotify.set('Entered Email has already been Registered. Please Enter another Email Address.', 'error');
               break;
             case 412:
               ngNotify.set('Entered Email address and Password were not Entered Successfully. Please Enter them Again.', 'error');
