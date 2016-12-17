@@ -3,17 +3,15 @@
  <div class="col-xs-12 col-lg-12">
    <div class="jumbotron" ng-show="token">
       <h2>Add a Note</h2>
-      <form name="noteForm" novalidate>
-        <div class="form-group">
+        <div>
           <label>Title</label>
-          <input type="title" ng-model="note.title" class="form-control ng-dirty ng-valid" id="titleInput" placeholder="Title" required>
+          <textarea class="jumbotron-title-text-area" ng-model="note.title" placeholder="Title"></textarea>
         </div>
-        <div class="form-group">
+        <div>
           <label>Text</label>
-          <input type="textarea" ng-model="note.body" class="form-control ng-dirty ng-valid" id="textInput" placeholder="Enter Note Description" required>
+          <textarea class="jumbotron-text-area" ng-model="note.body" placeholder="Enter Note Description"></textarea>
         </div>
         <a class="button" ng-show="noteForm.$valid" ng-click="addNote(note.title, note.body)">Save</a>
-      </form>
    </div>
    <div class="jumbotron" ng-show="!token">
       <h2>Please Login or Register</h2>

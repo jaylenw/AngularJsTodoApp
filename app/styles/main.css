@@ -92,6 +92,17 @@ body {
   border-width: 2px;
 }*/
 
+.jumbotron-title-text-area {
+  width: 567px;
+  resize: none;
+}
+
+.jumbotron-text-area {
+  width: 567px;
+  max-width: 576px;
+  min-height: 200px;
+}
+
 .form-control:focus {
   box-shadow: none;
   border: inherit;
