@@ -51,6 +51,10 @@ body {
   padding: 14px 24px;
 }
 
+.jumbotron h2 {
+  margin-bottom: 20px;
+}
+
 /* Supporting marketing content */
 .marketing {
   margin: 40px 0;
@@ -126,6 +130,7 @@ body {
   text-decoration: none;
   cursor: pointer;
 }
+
 
 .button-positive {
   background: #4ACE35;
