@@ -41,9 +41,9 @@
         </div>
         <div class="noteDiv" ng-show="isEditing">
           <p><em>Edit mode</em></p>
-          <input type="title" ng-model="note.title" id="titleInput">
+          <textarea class="card-title-text-area" ng-model="note.title"></textarea>
           <p><strong><em>{{formatDate(note.date)}}</em></strong></p>
-          <input type="textarea" ng-model="note.body" id="textInput">
+          <textarea class="card-text-area" ng-model="note.body"></textarea>
           <a class="button button-positive" ng-hide="note.archive" ng-click="isEditing = false; updateNoteContent(note._id, note.title, note.body)" >Save</a>
           <a class="button button-positive" ng-show="note.archive" ng-click="note.archive = false; updateNoteArchive(note._id, note.archive);" >Restore</a>
           <a class="button button-positive" ng-show="note.archive" ng-click="deleteNote(note._id);">Delete</a>
