@@ -101,6 +101,14 @@ body {
   width: 567px;
   max-width: 576px;
   min-height: 200px;
+  margin-bottom: 20px;
+}
+
+.card-text-area {
+  width: 620px;
+  max-width: 620px;
+  height: 200px;
+  margin-bottom: 20px;
 }
 
 .form-control:focus {

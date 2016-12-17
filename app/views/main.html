@@ -11,7 +11,7 @@
           <label>Text</label>
           <textarea class="jumbotron-text-area" ng-model="note.body" placeholder="Enter Note Description"></textarea>
         </div>
-        <a class="button" ng-show="noteForm.$valid" ng-click="addNote(note.title, note.body)">Save</a>
+        <a class="button" ng-show="note.title && note.body" ng-click="addNote(note.title, note.body)">Save</a>
    </div>
    <div class="jumbotron" ng-show="!token">
       <h2>Please Login or Register</h2>
@@ -33,7 +33,7 @@
         <div class="noteDiv" ng-hide="isEditing">
           <h2>{{note.title}}</h2>
           <p><strong><em>{{formatDate(note.date)}}</em></strong></p>
-          <p>{{note.body}}</p>
+          <textarea readonly class="card-text-area">{{note.body}}</textarea>
           <a class="button button-positive" ng-hide="note.archive" ng-click="note.archive = true; updateNoteArchive(note._id, note.archive);">Add to Archive</a>
           <a class="button button-positive" ng-hide="note.archive" ng-click="isEditing = true">Edit</a>
           <a class="button button-positive" ng-show="note.archive" ng-click="note.archive = false; updateNoteArchive(note._id, note.archive);">Restore</a>
