@@ -7,7 +7,7 @@
 
 body {
   padding: 0;
-  background-color: #565595;
+  background-color: #b0b0b7;
 }
 
 /* Everything but the jumbotron gets side spacing for mobile first views */
@@ -92,6 +92,35 @@ body {
   border-width: 2px;
 }*/
 
+.jumbotron-title-text-area {
+  width: 100%;
+  resize: none;
+}
+
+.jumbotron-text-area {
+  width: 100%;
+  /*max-width: 576px;*/
+  min-height: 200px;
+  margin-bottom: 20px;
+}
+
+.card-text-area {
+  width: 100%;
+  /*max-width: 620px;*/
+  min-height: 200px;
+  margin-bottom: 20px;
+}
+
+.card-title-text-area {
+  width: 100%;
+  /*max-width: 620px;*/
+}
+
+.no-edit {
+  background: #eee;
+  border-style: none;
+}
+
 .form-control:focus {
   box-shadow: none;
   border: inherit;
@@ -105,9 +134,10 @@ body {
 }
 
 .noteDiv {
-  border: 5px solid #042037;
+  border: 5px solid #3498db;
   border-radius: 5px;
   padding: 10px;
+  padding-bottom: 50px;
   margin: 10px;
   background-color: #eee;
 }
@@ -151,6 +181,11 @@ body {
   color: #ffffff;
 }
 
-.searchLabel {
+.padleft {
+  margin-left: 50px;
+  margin-top: 50px;
+}
+
+.button-archive {
   margin-left: 50px;
 }
