@@ -107,13 +107,18 @@ body {
 .card-text-area {
   width: 620px;
   max-width: 620px;
-  height: 200px;
+  min-height: 200px;
   margin-bottom: 20px;
 }
 
 .card-title-text-area {
   width: 620px;
   max-width: 620px;
+}
+
+.no-edit {
+  background: #eee;
+  border-style: none;
 }
 
 .form-control:focus {
