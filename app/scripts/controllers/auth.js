@@ -88,6 +88,7 @@ angular.module('todoApp')
         switch(err.status){
           case 500:
             ngNotify.set('Error occured Logging Out', 'error');
+            break;
           default:
             ngNotify.set('An Error Occured Processing Your Request. Please try Again.', 'error');
         }
