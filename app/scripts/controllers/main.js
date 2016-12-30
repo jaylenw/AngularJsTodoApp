@@ -14,7 +14,7 @@
  //data. This is called dependency injection
 
 angular.module('todoApp')
-  .controller('MainCtrl', function ($scope, $window, Task, ngNotify) {
+  .controller('MainCtrl', function ($scope, $window, $showdown, Task, ngNotify) {
 
     //Getting user token and adding it to scope
     $scope.token = localStorage.getItem("token");
@@ -119,5 +119,10 @@ angular.module('todoApp')
                 }
       });
     }
+
+  //make mark down
+  $scope.texToMarkdown = function(text){
+    return $showdown.makeHtml(text);
+  }
 
   });//end of controller

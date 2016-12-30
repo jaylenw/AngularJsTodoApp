@@ -39,7 +39,7 @@
               <span class="icon-bar"></span>
             </button>
 
-            <a class="navbar-brand" href="#/">Todo List</a>
+            <a class="navbar-brand" href="#/">Note List</a>
           </div>
 
           <div class="collapse navbar-collapse" id="js-navbar-collapse">
@@ -47,6 +47,7 @@
             <ul class="nav navbar-nav">
               <li><a ng-href="#/">Current List</a></li>
               <li><a ng-href="#/auth">Authentication</a></li>
+              <li><a href="https://github.com/jaylenw/AngularJsTodoApp" target="_blank" >GitHub</a></li>
             </ul>
           </div>
         </div>
@@ -70,6 +71,8 @@
     <script src="bower_components/angular-touch/angular-touch.js"></script>
     <script src="bower_components/moment/moment.js"></script>
     <script src="bower_components/ng-notify/src/scripts/ng-notify.js"></script>
+    <script src="bower_components/showdown/dist/showdown.js"></script>
+    <script src="bower_components/ng-showdown/dist/ng-showdown.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
@@ -80,6 +83,7 @@
         <script src="scripts/services/task.js"></script>
         <script src="scripts/services/user.js"></script>
         <script src="scripts/services/config.js"></script>
+        <script src="scripts/services/markdown.js"></script>
         <!-- endbuild -->
 </body>
 </html>

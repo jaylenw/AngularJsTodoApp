@@ -189,3 +189,11 @@ body {
 .button-archive {
   margin-left: 50px;
 }
+
+.markdown-div {
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-bottom: 20px;
+}

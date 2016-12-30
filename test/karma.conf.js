@@ -31,6 +31,8 @@ module.exports = function(config) {
       'bower_components/angular-touch/angular-touch.js',
       'bower_components/moment/moment.js',
       'bower_components/ng-notify/src/scripts/ng-notify.js',
+      'bower_components/showdown/dist/showdown.js',
+      'bower_components/ng-showdown/dist/ng-showdown.js',
       'bower_components/angular-mocks/angular-mocks.js',
       // endbower
       'app/scripts/**/*.js',

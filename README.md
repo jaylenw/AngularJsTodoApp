@@ -2,10 +2,15 @@
 
 Android version of this app is in development [here](https://github.com/jaylenw/IonicTodoApp).
 
+##Description
+
+Users are able to use this App as a Todo-List or a Note Taking application.
+
 ##Features
 
 * User Login, Logout, & Registration
-* Add, Delete, and Archive Notes
+* Add, Edit, Delete, and Archive Notes
+* Supports Markdown
 * Mobile Friendly
 
 ## Build, Testing, & Development

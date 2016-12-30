@@ -21,8 +21,8 @@
    <div class="row">
      <div ng-show="token">
        <div class="generic">
-         <a class="button button-archive" ng-hide="showArchive" ng-click="showArchive = true;">Show archive list</a>
-         <a class="button" ng-show="showArchive" ng-click="showArchive = false;">Show todo list</a>
+         <a class="button button-archive" ng-hide="showArchive" ng-click="showArchive = true;">Show Archive list</a>
+         <a class="button button-archive" ng-show="showArchive" ng-click="showArchive = false;">Show Note list</a>
          <label class="padleft"><input type="textarea" class="form-control" ng-model="searchText" placeholder="Search for a Note"></label>
        </div>
    </div>
@@ -31,9 +31,9 @@
 
      <div class="col-xs-12 col-lg-12" ng-show="token" ng-repeat="note in todoList | orderBy: '-date' | filter:{archive:showArchive} | filter: searchText">
         <div class="noteDiv" ng-hide="isEditing">
-          <h2>{{note.title}}</h2>
+          <h1>{{note.title}}</h1>
           <p><strong><em>{{formatDate(note.date)}}</em></strong></p>
-          <textarea readonly class="card-text-area no-edit">{{note.body}}</textarea>
+          <div class="markdown-div" markdown="note.body"></div>
           <a class="button button-positive" ng-hide="note.archive" ng-click="note.archive = true; updateNoteArchive(note._id, note.archive);">Add to Archive</a>
           <a class="button button-positive" ng-hide="note.archive" ng-click="isEditing = true">Edit</a>
           <a class="button button-positive" ng-show="note.archive" ng-click="note.archive = false; updateNoteArchive(note._id, note.archive);">Restore</a>
