@@ -31,7 +31,7 @@
 
      <div class="col-xs-12 col-lg-12" ng-show="token" ng-repeat="note in todoList | orderBy: '-date' | filter:{archive:showArchive} | filter: searchText">
         <div class="noteDiv" ng-hide="isEditing">
-          <h2>{{note.title}}</h2>
+          <h1>{{note.title}}</h1>
           <p><strong><em>{{formatDate(note.date)}}</em></strong></p>
           <div class="markdown-div" markdown="note.body"></div>
           <a class="button button-positive" ng-hide="note.archive" ng-click="note.archive = true; updateNoteArchive(note._id, note.archive);">Add to Archive</a>
