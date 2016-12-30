@@ -33,7 +33,7 @@
         <div class="noteDiv" ng-hide="isEditing">
           <h2>{{note.title}}</h2>
           <p><strong><em>{{formatDate(note.date)}}</em></strong></p>
-          <textarea readonly class="card-text-area no-edit">{{note.body}}</textarea>
+          <div class="markdown-div" markdown="note.body"></div>
           <a class="button button-positive" ng-hide="note.archive" ng-click="note.archive = true; updateNoteArchive(note._id, note.archive);">Add to Archive</a>
           <a class="button button-positive" ng-hide="note.archive" ng-click="isEditing = true">Edit</a>
           <a class="button button-positive" ng-show="note.archive" ng-click="note.archive = false; updateNoteArchive(note._id, note.archive);">Restore</a>
