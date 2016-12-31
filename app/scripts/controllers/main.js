@@ -120,9 +120,4 @@ angular.module('todoApp')
       });
     }
 
-  //make mark down
-  $scope.texToMarkdown = function(text){
-    return $showdown.makeHtml(text);
-  }
-
   });//end of controller
