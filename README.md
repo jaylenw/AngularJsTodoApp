@@ -1,6 +1,6 @@
 #AngularJs Todo App
 
-Android version of this app is available [here](https://github.com/jaylenw/IonicTodoApp). Desktop Version of this app is available [here](https://github.com/jaylenw/ElectronTodoApp).
+Android version of this app is available [here](https://github.com/jaylenw/IonicTodoApp). Desktop version of this app is available [here](https://github.com/jaylenw/ElectronTodoApp).
 
 ##Description
 
