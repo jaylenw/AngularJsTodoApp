@@ -1,0 +1,12 @@
+language: node_js
+node_js:
+  - "4.2.6"
+
+before_script:
+  - npm install -g bower
+  - npm install -g grunt-cli
+  - npm install
+  - bower install
+
+script:
+  grunt test #runs our karma and jasmine testing

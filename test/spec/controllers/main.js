@@ -17,7 +17,32 @@ describe('Controller: MainCtrl', function () {
     });
   }));
 
-  it('should attach a list of awesomeThings to the scope', function () {
-    expect(MainCtrl.awesomeThings.length).toBe(3);
+  it('shall be that token should be defined', function () {
+    expect(scope.token).toBeDefined();
   });
+
+  it('shall be that note should be defined', function () {
+    expect(scope.note).toBeDefined();
+  });
+
+  it('shall be that addNote should be defined', function () {
+    expect(scope.addNote).toBeDefined();
+  });
+
+  it('shall be that updateNoteContent should be defined', function () {
+    expect(scope.updateNoteContent).toBeDefined();
+  });
+
+  it('shall be that updateNoteArchive should be defined', function () {
+    expect(scope.updateNoteArchive).toBeDefined();
+  });
+
+  it('shall be that deleteNote should be defined', function () {
+    expect(scope.deleteNote).toBeDefined();
+  });
+
+  it('shall be that formatDate should be defined', function () {
+    expect(scope.formatDate).toBeDefined();
+  });
+
 });
