@@ -1,4 +1,4 @@
-#AngularJs Todo App
+#AngularJs Todo App [![Build Status](https://travis-ci.org/jaylenw/AngularJsTodoApp.svg?branch=master)](https://travis-ci.org/jaylenw/AngularJsTodoApp)
 
 Android version of this app is available [here](https://github.com/jaylenw/IonicTodoApp). Desktop version of this app is available [here](https://github.com/jaylenw/ElectronTodoApp).
 
