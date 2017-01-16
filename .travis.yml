@@ -3,8 +3,8 @@ node_js:
   - "4.2.6"
 
 before_install:
-  - apt update
-  - apt install npm -y
+  - apt-get update
+  - apt-get install npm -y
   - npm install -g npm
   - npm install -g bower
   - npm install -g grunt-cli
