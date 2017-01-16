@@ -3,15 +3,15 @@ node_js:
   - "4.2.6"
 
 before_install:
-  'apt-get update'
-  'apt-get install npm -y'
-  'npm install -g npm'
-  'npm install -g bower'
-  'npm install -g grunt-cli'
+  - apt update
+  - apt install npm -y
+  - npm install -g npm
+  - npm install -g bower
+  - npm install -g grunt-cli
 
 before_script:
-  'npm install'
-  'bower install'
+  - npm install
+  - bower install
 
-after_script:
-  'grunt test' #runs our karma and jasmine testing
+script:
+  grunt test #runs our karma and jasmine testing
