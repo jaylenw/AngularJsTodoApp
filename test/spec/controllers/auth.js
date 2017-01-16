@@ -17,23 +17,23 @@ describe('Controller: authCtrl', function () {
     });
   }));
 
-  it('user should be defined', function () {
+  it('shall be that user should be defined', function () {
     expect(scope.user).toBeDefined();
   });
 
-  it('token should be defined', function () {
+  it('shall be that token should be defined', function () {
     expect(scope.token).toBeDefined();
   });
 
-  it('register should be defined', function () {
+  it('shall be that register should be defined', function () {
     expect(scope.register).toBeDefined();
   });
 
-  it('login should be defined', function () {
+  it('shall be that login should be defined', function () {
     expect(scope.login).toBeDefined();
   });
 
-  it('logout should be defined', function () {
+  it('shall be that logout should be defined', function () {
     expect(scope.logout).toBeDefined();
   });
 });

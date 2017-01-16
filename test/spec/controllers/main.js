@@ -17,31 +17,31 @@ describe('Controller: MainCtrl', function () {
     });
   }));
 
-  it('token should be defined', function () {
+  it('shall be that token should be defined', function () {
     expect(scope.token).toBeDefined();
   });
 
-  it('note should be defined', function () {
+  it('shall be that note should be defined', function () {
     expect(scope.note).toBeDefined();
   });
 
-  it('addNote should be defined', function () {
+  it('shall be that addNote should be defined', function () {
     expect(scope.addNote).toBeDefined();
   });
 
-  it('updateNoteContent should be defined', function () {
+  it('shall be that updateNoteContent should be defined', function () {
     expect(scope.updateNoteContent).toBeDefined();
   });
 
-  it('updateNoteArchive should be defined', function () {
+  it('shall be that updateNoteArchive should be defined', function () {
     expect(scope.updateNoteArchive).toBeDefined();
   });
 
-  it('deleteNote should be defined', function () {
+  it('shall be that deleteNote should be defined', function () {
     expect(scope.deleteNote).toBeDefined();
   });
 
-  it('formatDate should be defined', function () {
+  it('shall be that formatDate should be defined', function () {
     expect(scope.formatDate).toBeDefined();
   });
 
