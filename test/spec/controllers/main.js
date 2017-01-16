@@ -17,10 +17,6 @@ describe('Controller: MainCtrl', function () {
     });
   }));
 
-  it('MainCtrl should attach a list of awesomeThings to the scope', function () {
-    expect(MainCtrl.awesomeThings.length).toBe(3);
-  });
-
   it('token should be defined', function () {
     expect(scope.token).toBeDefined();
   });

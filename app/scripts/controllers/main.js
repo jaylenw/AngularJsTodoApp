@@ -16,13 +16,6 @@
 angular.module('todoApp')
   .controller('MainCtrl', function ($scope, $window, $showdown, Task, ngNotify) {
 
-    //unit testing, make sure the controller is initialized properly
-    this.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
-
     //Getting user token and adding it to scope
     $scope.token = localStorage.getItem("token");
 
