@@ -17,7 +17,23 @@ describe('Controller: authCtrl', function () {
     });
   }));
 
-  it('should attach a list of awesomeThings to the scope', function () {
-    expect(authCtrl.awesomeThings.length).toBe(3);
+  it('user should be defined', function () {
+    expect(scope.user).toBeDefined();
+  });
+
+  it('token should be defined', function () {
+    expect(scope.token).toBeDefined();
+  });
+
+  it('register should be defined', function () {
+    expect(scope.register).toBeDefined();
+  });
+
+  it('login should be defined', function () {
+    expect(scope.login).toBeDefined();
+  });
+
+  it('logout should be defined', function () {
+    expect(scope.logout).toBeDefined();
   });
 });
