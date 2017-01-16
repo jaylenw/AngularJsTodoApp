@@ -10,6 +10,14 @@
 angular.module('todoApp')
   .controller('authCtrl', function ($scope, $window, User, ngNotify) {
 
+    //unit testing, make sure the controller is initialized properly
+    this.awesomeThings = [
+      'HTML5 Boilerplate',
+      'AngularJS',
+      'Karma'
+    ];
+
+
     //Initializing our user object
     $scope.user = {};
 
