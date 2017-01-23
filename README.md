@@ -17,7 +17,9 @@ Users are able to use this App as a Todo-List or a Note Taking application.
 
 ## Build, Testing, & Development
 
-1. Need to have [Nodejs](https://nodejs.org/en/), [NPM](https://www.npmjs.com/), [Grunt](http://gruntjs.com/), and [Bower](https://bower.io/) installed on your system globally. This guide assumes you are running a 16.04 LTS 64bit Ubuntu system. If running a Debian/Ubuntu system and you do not have the packages installed globally, run these commands below:
+1. Install Git on the system by running the command: sudo apt install git
+
+2. Need to have [Nodejs](https://nodejs.org/en/), [NPM](https://www.npmjs.com/), [Grunt](http://gruntjs.com/), and [Bower](https://bower.io/) installed on your system globally. This guide assumes you are running a 16.04 LTS 64bit Ubuntu system. If running a Debian/Ubuntu system and you do not have the packages installed globally, run these commands below:
 
         sudo apt update  
         sudo apt install nodejs  
@@ -27,13 +29,13 @@ Users are able to use this App as a Todo-List or a Note Taking application.
         sudo npm install -g bower
         sudo npm install -g grunt-cli
 
-2. Clone this repo.
+3. Clone the repository by running: git clone https://github.com/'YourGitHubUserName'/AngularJsTodoApp.git
 
-3. In the root of the project folder, run `npm install` and `bower install`.
+4. In the root of the project folder, run `npm install` and `bower install`.
 
-4. Run `grunt serve` for live preview. You can then browse the site after opening your browser to the url that grunt has informed you. 
+5. Run `grunt serve` for live preview. You can then browse the site after opening your browser to the url that grunt has informed you. 
 
-5. Run `grunt test` to make sure the app will past some unit testing if you are making changes to the app. This is a small safety measure to make sure your changes do not have an adverse effect. 
+6. Run `grunt test` to make sure the app will past some unit testing if you are making changes to the app. This is a small safety measure to make sure your changes do not have an adverse effect. 
 
 
 Note: You will not be able to register or login with an account until the backend is setup correctly.
