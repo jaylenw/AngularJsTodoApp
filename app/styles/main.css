@@ -197,3 +197,18 @@ body {
   text-overflow: ellipsis;
   margin-bottom: 20px;
 }
+
+.menu{ /*added another class so that the navigation links are in a box*/
+float:right;
+width:470px;
+margin-right:110px;
+margin-bottom:25px;
+font-size:18px;
+background-color: #d5d8dc;
+text-align:center;
+padding:3px;
+border: 1px solid #ebedef ;
+border-radius:8px;
+margin-top:27px;
+box-shadow: 1px 1px 1px 1px #ebf5fb ;
+}
