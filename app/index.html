@@ -39,20 +39,25 @@
               <span class="icon-bar"></span>
             </button>
 
-            <a class="navbar-brand" href="#/">Note List</a>
+           
           </div>
 
           <div class="collapse navbar-collapse" id="js-navbar-collapse">
 
+          <div class= "menu"> <!--added another class so that the navigation links are in a box-->
+
             <ul class="nav navbar-nav">
+	            <li><a href="#/">Note List</a></li>
               <li><a ng-href="#/">Current List</a></li>
               <li><a ng-href="#/auth">Authentication</a></li>
               <li><a href="https://github.com/jaylenw/AngularJsTodoApp" target="_blank" >GitHub</a></li>
+          </div>
             </ul>
           </div>
         </div>
       </div>
     </div>
+
 
     <div class="container">
       <div ng-view=""></div>
