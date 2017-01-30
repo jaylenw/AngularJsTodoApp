@@ -17,10 +17,8 @@
       <input type="password" ng-model="user.confirmpassword" ng-show="amRegistering"  class="form-control" ng-class="{fieldInvalid: (user.password != user.confirmpassword)}" placeholder="Confirm Password">
   </div>
 
-    <a class="button button-positive button-auth" ng-show="amRegistering" ng-click="register()"
-      ng-disabled="
-      user.email.length == 0 ||
-      !(user.password == user.confirmpassword)">Register!</a>
+    <a class="button button-positive button-auth" ng-show="(amRegistering && !(user.email.length == 0) && (user.password == user.confirmpassword))" ng-click="register()"
+      >Register!</a>
     <a class="button button-positive button-auth" ng-hide="amRegistering" ng-click="login()" type="a"
     ng-disabled="!user.email || user.email.length == 0 || !user.password || user.password.length == 0">Login!</a>
   </div>
