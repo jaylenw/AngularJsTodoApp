@@ -17,7 +17,8 @@ angular
     'ngSanitize',
     'ngTouch',
     'ngNotify',
-    'ng-showdown'
+    'ng-showdown',
+    'angular-loading-bar'
   ])
   .config(function ($routeProvider) {
     $routeProvider
