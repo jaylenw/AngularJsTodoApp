@@ -1,0 +1,53 @@
+<div class="row row-offcanvas row-offcanvas-right">
+
+ <div class="col-xs-12 col-lg-12">
+   <div class="jumbotron" ng-show="token">
+      <h2>Add a Note</h2>
+        <div>
+          <label>Title</label>
+          <textarea class="jumbotron-title-text-area" ng-model="note.title" placeholder="Title"></textarea>
+        </div>
+        <div>
+          <label>Text</label>
+          <textarea class="jumbotron-text-area" ng-model="note.body" placeholder="Enter Note Description"></textarea>
+        </div>
+        <a class="button" ng-show="note.title && note.body" ng-click="addNote(note.title, note.body)">Save</a>
+   </div>
+   <div class="jumbotron" ng-show="!token">
+      <h2>Please Login or Register</h2>
+      <!-- button takes user to auth page -->
+      <a class="button" ng-click="goTo('#/auth')">Login/Register</a>
+   </div>
+   <div class="row">
+     <div ng-show="token">
+       <div class="generic">
+         <a class="button button-archive" ng-hide="showArchive" ng-click="showArchive = true;">Show Archive list</a>
+         <a class="button button-archive" ng-show="showArchive" ng-click="showArchive = false;">Show Note list</a>
+         <label class="padleft"><input type="textarea" class="form-control" ng-model="searchText" placeholder="Search for a Note"></label>
+       </div>
+   </div>
+ </div>
+
+
+     <div class="col-xs-12 col-lg-12" ng-show="token" ng-repeat="note in todoList | orderBy: '-date' | filter:{archive:showArchive} | filter: searchText">
+        <div class="noteDiv" ng-hide="isEditing">
+          <h1>{{note.title}}</h1>
+          <p><strong><em>{{formatDate(note.date)}}</em></strong></p>
+          <div class="markdown-div" markdown="note.body"></div>
+          <a class="button button-positive" ng-hide="note.archive" ng-click="note.archive = true; updateNoteArchive(note._id, note.archive);">Add to Archive</a>
+          <a class="button button-positive" ng-hide="note.archive" ng-click="isEditing = true">Edit</a>
+          <a class="button button-positive" ng-show="note.archive" ng-click="note.archive = false; updateNoteArchive(note._id, note.archive);">Restore</a>
+          <a class="button button-positive" ng-show="note.archive" ng-click="deleteNote(note._id);">Delete</a>
+        </div>
+        <div class="noteDiv" ng-show="isEditing">
+          <p><em>Edit mode</em></p>
+          <textarea class="card-title-text-area" ng-model="note.title"></textarea>
+          <p><strong><em>{{formatDate(note.date)}}</em></strong></p>
+          <textarea class="card-text-area" ng-model="note.body"></textarea>
+          <a class="button button-positive" ng-hide="note.archive" ng-click="isEditing = false; updateNoteContent(note._id, note.title, note.body)" >Save</a>
+          <a class="button button-positive" ng-show="note.archive" ng-click="note.archive = false; updateNoteArchive(note._id, note.archive);" >Restore</a>
+          <a class="button button-positive" ng-show="note.archive" ng-click="deleteNote(note._id);">Delete</a>
+        </div>
+    </div>
+   </div>
+ </div>

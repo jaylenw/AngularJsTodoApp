@@ -1,0 +1,26 @@
+
+<div class="row">
+  <div class="authText" ng-if="token">
+    <p class="padleft">You are Logged In.</p>
+    <a class="button padleft" ng-click="logout()">Logout</a>
+  </div>
+  <div ng-if="!token">
+    <div class="row">
+      <a class="button" ng-hide="amRegistering" ng-click="amRegistering = true">zto Register</a>
+      <a class="button" ng-show="amRegistering" ng-click="amRegistering = false">Click to Login</a>
+    </div>
+
+    <div class="loginFields">
+      <input type="text" ng-model="user.email" class="form-control" placeholder="Email Address">
+
+      <input type="password" ng-model="user.password" class="form-control" placeholder="Password">
+      <input type="password" ng-model="user.confirmpassword" ng-show="amRegistering"  class="form-control" ng-class="{fieldInvalid: (user.password != user.confirmpassword)}" placeholder="Confirm Password">
+  </div>
+
+    <a class="button button-positive button-auth" ng-show="(amRegistering && !(user.email.length == 0) && (user.password == user.confirmpassword))" ng-click="register()"
+      >Register!</a>
+    <a class="button button-positive button-auth" ng-hide="amRegistering" ng-click="login()" type="a"
+    ng-disabled="!user.email || user.email.length == 0 || !user.password || user.password.length == 0">Login!</a>
+  </div>
+
+</div><!-- /.row -->
