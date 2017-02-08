@@ -197,3 +197,11 @@ body {
   text-overflow: ellipsis;
   margin-bottom: 20px;
 }
+
+label,input {
+display: block;
+}
+
+label{
+margin-bottom: 20px;
+}
