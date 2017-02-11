@@ -10,6 +10,14 @@ body {
   background-color: #99ccff;
 }
 
+label, input {
+  display: block;
+}
+
+label {
+  margin-bottom: 10px;
+}
+
 /* Everything but the jumbotron gets side spacing for mobile first views */
 .header,
 .marketing,
