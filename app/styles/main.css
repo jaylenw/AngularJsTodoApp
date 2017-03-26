@@ -208,6 +208,16 @@ label {
 
 a:hover {
   color: #000000;
-  background-color:#ff6363;
-  cursor: pointer;  
+  background-color: #ff6363;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.navbar-default .navbar-brand:hover {
+  color: #000000;
+  background-color: #ff6363;
+}
+
+.navbar-nav li:hover {
+  background-color: #ff6363;
 }
