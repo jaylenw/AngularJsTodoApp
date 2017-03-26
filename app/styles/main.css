@@ -205,3 +205,10 @@ label {
   text-overflow: ellipsis;
   margin-bottom: 20px;
 }
+
+a:hover {
+  color: #000000;
+  background-color:#ff6363;  
+  margin-right:4px; /*moves the specific tab on the right by 4px when hover*/
+  cursor:pointer;  
+}
