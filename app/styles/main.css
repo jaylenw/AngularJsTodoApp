@@ -219,5 +219,6 @@ a:hover {
 }
 
 .navbar-nav li:hover {
+  color: #000000;
   background-color: #ff6363;
 }
