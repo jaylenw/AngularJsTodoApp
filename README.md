@@ -1,14 +1,14 @@
-#AngularJs Todo App [![Build Status](https://travis-ci.org/jaylenw/AngularJsTodoApp.svg?branch=master)](https://travis-ci.org/jaylenw/AngularJsTodoApp)
+# AngularJs Todo App [![Build Status](https://travis-ci.org/jaylenw/AngularJsTodoApp.svg?branch=master)](https://travis-ci.org/jaylenw/AngularJsTodoApp)
 
 Android version of this app is available [here](https://github.com/jaylenw/IonicTodoApp). Desktop version of this app is available [here](https://github.com/jaylenw/ElectronTodoApp).
 
 This repo is designed for you to deploy your own backend and edit the necessary files here to work with it. However, I will soon provide a production version of this by specifying a url where anyone may sign up and use it themselves.
 
-##Description
+## Description
 
 Users are able to use this App as a Todo-List or a Note Taking application.
 
-##Features
+## Features
 
 * User Login, Logout, & Registration
 * Add, Edit, Delete, and Archive Notes
