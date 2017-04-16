@@ -8,6 +8,12 @@ This repo is designed for you to deploy your own backend and edit the necessary 
 
 Users are able to use this App as a Todo-List or a Note Taking application.
 
+![](https://github.com/jaylenw/AngularJsTodoApp/raw/master/screenshots/1.png)
+
+![](https://github.com/jaylenw/AngularJsTodoApp/raw/master/screenshots/2.png)
+
+![](https://github.com/jaylenw/AngularJsTodoApp/raw/master/screenshots/3.png)
+
 ## Features
 
 * User Login, Logout, & Registration
@@ -31,9 +37,9 @@ Users are able to use this App as a Todo-List or a Note Taking application.
 
 3. In the root of the project folder, run `npm install` and `bower install`.
 
-4. Run `grunt serve` for live preview. You can then browse the site after opening your browser to the url that grunt has informed you. 
+4. Run `grunt serve` for live preview. You can then browse the site after opening your browser to the url that grunt has informed you.
 
-5. Run `grunt test` to make sure the app will past some unit testing if you are making changes to the app. This is a small safety measure to make sure your changes do not have an adverse effect. 
+5. Run `grunt test` to make sure the app will past some unit testing if you are making changes to the app. This is a small safety measure to make sure your changes do not have an adverse effect.
 
 
 Note: You will not be able to register or login with an account until the backend is setup correctly.
