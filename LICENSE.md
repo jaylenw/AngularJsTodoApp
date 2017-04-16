@@ -1,4 +1,4 @@
-#AngularJsTodoApp
+# AngularJsTodoApp
 
 The MIT License (MIT)
 
@@ -24,7 +24,7 @@ THE SOFTWARE.
 
 ---------------------------------------------------------------------------------
 
-#Angular
+# Angular
 
 The MIT License
 
@@ -50,7 +50,7 @@ THE SOFTWARE.
 
 ------------------------------------------------------------------------------
 
-#Bootstrap
+# Bootstrap
 
 The MIT License (MIT)
 
@@ -76,7 +76,7 @@ THE SOFTWARE.
 
 ----------------------------------------------------------------------------------
 
-#Moment
+# Moment
 
 Copyright (c) 2011-2016 Tim Wood, Iskren Chernev, Moment.js contributors
 
@@ -103,7 +103,7 @@ OTHER DEALINGS IN THE SOFTWARE.
 
 -------------------------------------------------------------------------
 
-#ng-Notify
+# ng-Notify
 
 The MIT License (MIT)
 
@@ -129,7 +129,7 @@ SOFTWARE.
 
 -------------------------------------------------------------------------------
 
-#ng-showdown
+# ng-showdown
 
 Copyright (c) 2015, showdownjs
 All rights reserved.
