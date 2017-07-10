@@ -222,3 +222,7 @@ a:hover {
   color: #000000;
   background-color: #ff6363;
 }
+
+.auth-row-padding {
+  padding-left: 20px;
+}
