@@ -7,7 +7,7 @@
 
 body {
   padding: 0;
-  background-color: #99ccff;
+  background-color: #white;
 }
 
 label, input {
@@ -53,6 +53,7 @@ label {
 .jumbotron {
   text-align: center;
   border-bottom: 1px solid #e5e5e5;
+  background-color: #11afbf;
 }
 .jumbotron .btn {
   font-size: 21px;
@@ -91,6 +92,7 @@ label {
   /* Remove the bottom border on the jumbotron for visual effect */
   .jumbotron {
     border-bottom: 0;
+    /*background-color: #11afbf;*/
   }
 }
 
@@ -163,7 +165,7 @@ label {
   border-radius: 8px;
   color: #ffffff;
   font-size: 20px;
-  background: #3498db;
+  background: #f79139;
   padding: 10px 20px 10px 20px;
   text-decoration: none;
   cursor: pointer;
