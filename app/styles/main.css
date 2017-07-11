@@ -54,7 +54,7 @@ label {
 .jumbotron {
   text-align: center;
   border-bottom: 1px solid #e5e5e5;
-  background-color: #11afbf;
+  background-color: #39cada;
 }
 .jumbotron .btn {
   font-size: 21px;
@@ -93,7 +93,7 @@ label {
   /* Remove the bottom border on the jumbotron for visual effect */
   .jumbotron {
     border-bottom: 0;
-    /*background-color: #11afbf;*/
+    /*background-color: #39cada;*/
   }
 }
 
@@ -145,12 +145,12 @@ label {
 }
 
 .noteDiv {
-  border: 5px solid #3498db;
+  border: 5px solid #39cada;
   border-radius: 5px;
   padding: 10px;
   padding-bottom: 50px;
   margin: 10px;
-  background-color: #eee;
+  background-color: rgba(147, 223, 224, 0.18);
 }
 
 .noteDiv input {
@@ -174,7 +174,7 @@ label {
 
 
 .button-positive {
-  background: #4ACE35;
+  background: #f79139;
 }
 
 .button-auth {
