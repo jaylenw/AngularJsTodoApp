@@ -8,6 +8,7 @@
 body {
   padding: 0;
   background-color: #white;
+  min-width: 500px;
 }
 
 label, input {
@@ -191,9 +192,10 @@ label {
   color: #ffffff;
 }
 
-.padleft {
+.pad-search {
   margin-left: 50px;
   margin-top: 50px;
+  margin-right: 50px;
 }
 
 .button-archive {
@@ -223,4 +225,8 @@ a:hover {
 .navbar-nav li:hover {
   color: #000000;
   background-color: #ff6363;
+}
+
+.auth-row-padding {
+  padding-left: 20px;
 }
