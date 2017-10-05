@@ -1,3 +1,5 @@
+#!/bin/bash
+
 NAME_PROJECT="jaylenw/AngularJsTodoApp"
 
 clear
