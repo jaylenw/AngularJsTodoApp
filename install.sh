@@ -39,8 +39,6 @@ echo "Installing npm dependences ...."
 npm install
 
 echo "Installing bower dependences ...."
-sudo chown -R $USER ~/.config
-sudo chown -R $USER ~/.cache
 bower install
 
 echo "Finish!"
