@@ -6,11 +6,11 @@ clear
 echo " ------------------ $NAME_PROJECT  ------------------ "
 
 echo "Fetches the list of available updates ..."
-sudo apt-get update
+sudo apt update
 
 echo "Installing Node.js ..."
 if [ "`dpkg -s nodejs | grep "installed"`" = "" ]; then
-  sudo apt-get install nodejs
+  sudo apt install nodejs
   echo "Configuring Node.js ..."
   sudo ln -s /usr/bin/nodejs /usr/bin/node
   echo "Node.js installed!"
@@ -20,7 +20,7 @@ fi
 
 echo "Installing npm ..."
 if [ "`dpkg -s npm | grep "installed"`" = "" ]; then
-  sudo apt-get install npm
+  sudo apt install npm
   echo "npm installed!"
 else
   echo "npm is already installed!";
