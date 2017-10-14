@@ -23,7 +23,10 @@ Users are able to use this App as a Todo-List or a Note Taking application.
 
 ## Build, Testing, & Development
 
-1. Need to have [Nodejs](https://nodejs.org/en/), [NPM](https://www.npmjs.com/), [Grunt](http://gruntjs.com/), and [Bower](https://bower.io/) installed on your system globally. This guide assumes you are running a 16.04 LTS 64bit Ubuntu system. If running a Debian/Ubuntu system and you do not have the packages installed globally, run these commands below:
+1. Need to have [Nodejs](https://nodejs.org/en/), [NPM](https://www.npmjs.com/), [Grunt](http://gruntjs.com/), and [Bower](https://bower.io/) installed on your system globally. This guide assumes you are running a 16.04 LTS 64 bit Ubuntu system. 
+You can easily get everything installed by simply cloning this repo and running `./install.sh` and proceed to step 4 or
+continue with the steps below. If running a Debian/Ubuntu system and you do not have the packages installed globally, run 
+these commands below:
 
         sudo apt update  
         sudo apt install nodejs  
