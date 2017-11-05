@@ -10,20 +10,13 @@ sudo apt update
 
 echo "Installing Node.js ..."
 if [ "`dpkg -s nodejs | grep "installed"`" = "" ]; then
+  sudo curl -sL https://deb.nodesource.com/setup_4.x | sudo -E bash -
   sudo apt install nodejs -y
   echo "Configuring Node.js ..."
   sudo ln -s /usr/bin/nodejs /usr/bin/node
   echo "Node.js installed!"
 else
   echo "Node.js is already installed!";
-fi
-
-echo "Installing npm ..."
-if [ "`dpkg -s npm | grep "installed"`" = "" ]; then
-  sudo apt install npm -y
-  echo "npm installed!"
-else
-  echo "npm is already installed!";
 fi
 
 echo "Installing npm packages ...."
