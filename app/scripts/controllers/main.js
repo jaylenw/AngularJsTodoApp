@@ -100,7 +100,8 @@ angular.module('todoApp')
 
     //function to return more of a nice date format
     $scope.formatDate = function(date){
-      return moment.utc(date).toDate().toString();
+      //return moment.utc(date).toDate().toString();
+      return moment(date).format("dddd, MMMM Do YYYY, h:mm:ss a");
     }
 
     //Obtain tasks from server and adding it to todolist
