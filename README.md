@@ -76,7 +76,7 @@ Note: You will not be able to register or login with an account until the backen
 
 This app depends on the backend to run properly.
 
-1. The backend for this app is found here at this repo: https://github.com/jaylenw/ToDoBackend
+1. The backend for this app is found here at this repo: https://github.com/jaylenw/nota
 
 2. To run the backend, first clone the repo above. Second, install forever from npm globally, `npm install forever -g`. You may    need to run `sudo npm install forever -g` if on Ubuntu/Debian.
    Use [forever](https://www.npmjs.com/package/forever) to run the backend server. Forever will make sure your app will continuously run and restart it if the process stops unexpectedly.
