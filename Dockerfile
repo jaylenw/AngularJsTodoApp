@@ -6,9 +6,6 @@ RUN apt install curl -y && \
     && npm install -g bower \
     && npm install -g grunt-cli;
 
-RUN addgroup --system frontEndUserGroup
-RUN adduser --disabled-password --gecos '' frontenduser
-
 ARG userID
 ARG groupID
 ENV userID ${userID}
@@ -19,6 +16,13 @@ COPY . /app
 WORKDIR /app
 
 RUN chown -R ${userID}:${groupID} /app
+
+RUN mkdir /home/frontend -p \
+    && chown -R ${userID}:${groupID} /home/frontend
+
+# need for phantomjs install as it writes to a "home" directory
+ENV HOME /home/frontend
+
 USER ${userID}
 
 RUN npm install phantomjs-prebuilt@2.1.14 --ignore-scripts \
