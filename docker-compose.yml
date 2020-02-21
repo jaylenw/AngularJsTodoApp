@@ -1,0 +1,14 @@
+version: '3'
+services:
+  notafrontend:
+    build:
+      context: .
+      args:
+        - userID=${userID}
+        - groupID=${groupID}
+    ports:
+      - "9000:9000"
+      - "35729:35729"
+    container_name: nota-frontend
+    volumes:
+      - '.:/app'
