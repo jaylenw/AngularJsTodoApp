@@ -32,6 +32,16 @@ angular
         controller: 'authCtrl',
         controllerAs: 'auth'
       })
+      .when('/forgot', {
+        templateUrl: 'views/forgot.html',
+        controller: 'ForgotCtrl',
+        controllerAs: 'forgot'
+      })
+      .when('/reset', {
+        templateUrl: 'views/reset.html',
+        controller: 'ResetCtrl',
+        controllerAs: 'reset'
+      })
       .otherwise({
         redirectTo: '/'
       });
