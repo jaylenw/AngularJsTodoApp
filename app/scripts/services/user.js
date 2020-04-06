@@ -24,6 +24,12 @@ angular.module('todoApp')
       params:{},
       isArray: false,
       url: Config.getAPI() + "/users/forgot"
+    },
+    reset:{
+      method:"POST",
+      params:{ email: '@email'},
+      isArray: false,
+      url: Config.getAPI() + "/users/reset/:email"
     }
   })
 }]);

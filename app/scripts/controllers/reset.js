@@ -15,27 +15,30 @@ angular.module('todoApp')
     $scope.user = {};
 
     //send request to start reset password
-    $scope.register = function() {
-      var payload = $scope.user;
-      User.register(payload, function(response) {
-        //storing token from server into browser
-        localStorage.setItem("token", response.token);
-        //redirecting user to home page
-        $window.location.href = '/';
+    $scope.changePasswd = function() {
+      var payload = {
+        email: $scope.user.email,
+        reset_token: $scope.user.reset_token,
+        password: $scope.user.password
+      }
+      User.reset(payload, function(response) {
+        $scope.user.email = "";
+        $scope.user.reset_token = "";
+        $scope.user.password = "";
+
+        function ngNotifyCallBack() {
+          // redirect the user to the authentication page
+          $window.location.href = '#/auth';
+        }
+        ngNotify.set('Your password has been successfully changed.', 'success', ngNotifyCallBack);
       }, function(err) {
 
           switch(err.status){
             case 406:
-              ngNotify.set(' Entered Email Address is not Valid. Please Enter a Valid Email Address.', 'error');
-              break;
-            case 409:
-              ngNotify.set('Entered Email has already been Registered. Please Enter another Email Address.', 'error');
-              break;
-            case 412:
-              ngNotify.set('Entered Email address and Password were not Entered Successfully. Please Enter them Again.', 'error');
+              ngNotify.set('Entered Email Address is not Valid. Please Enter a Valid Email Address.', 'error');
               break;
             case 500:
-              ngNotify.set('We Could not Save Your Account. Please try Again.', 'error');
+              ngNotify.set('We Could not Update Your Account. Please try Again.', 'error');
               break;
             default:
               ngNotify.set('An Error Occured Processing Your Request to the Server. Please try Again.', 'error');
