@@ -20,7 +20,7 @@ angular.module('todoApp')
     //send request to start reset password
     $scope.forgotReq = function() {
       var payload = $scope.user;
-      User.forgot(payload, function(response) {
+      User.forgot(payload, function() {
         $scope.user.email = ""; // clear out email address
         ngNotify.set('Please check your inbox for an email to reset your password.', 'success');
       }, function(err) {

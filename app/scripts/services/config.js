@@ -1,3 +1,5 @@
+'use strict';
+
 angular.module('todoApp')
 .factory("Config",function(){
 
@@ -7,7 +9,7 @@ angular.module('todoApp')
 
   configService.getAPI = function(){
     return _apiUrl;
-  }
+  };
 
   return configService;
 });

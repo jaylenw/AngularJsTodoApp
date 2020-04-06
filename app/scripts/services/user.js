@@ -1,3 +1,5 @@
+'use strict';
+
 angular.module('todoApp')
 .factory("User",['$resource', 'Config', function($resource, Config){
   return $resource(Config.getAPI() + "/users", {},{
@@ -31,5 +33,5 @@ angular.module('todoApp')
       isArray: false,
       url: Config.getAPI() + "/users/reset/:email"
     }
-  })
+  });
 }]);

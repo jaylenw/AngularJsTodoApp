@@ -20,8 +20,8 @@ angular.module('todoApp')
         email: $scope.user.email,
         reset_token: $scope.user.reset_token,
         password: $scope.user.password
-      }
-      User.reset(payload, function(response) {
+      };
+      User.reset(payload, function() {
         $scope.user.email = "";
         $scope.user.reset_token = "";
         $scope.user.password = "";
