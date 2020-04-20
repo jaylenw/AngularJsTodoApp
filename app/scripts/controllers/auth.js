@@ -76,9 +76,9 @@ angular.module('todoApp')
   $scope.logout = function(){
     var payload = {
       "token": $scope.token
-    }
+    };
     User.logout(payload,
-      function(success){
+      function(){
         //Removing Local Token From Browser
         localStorage.removeItem("token");
         //redirecting user to home page
@@ -94,5 +94,5 @@ angular.module('todoApp')
         }
       }
     );
-  }
+  };
 });//end of controller

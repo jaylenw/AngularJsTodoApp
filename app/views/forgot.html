@@ -1,0 +1,17 @@
+
+<div class="row auth-row-padding">
+  <div class="authText" ng-if="token">
+    <p class="padleft">You are Logged In.</p>
+    <a class="button padleft" ng-click="goTo('#/')">Notes</a>
+  </div>
+  <div ng-if="!token">
+
+    <div class="loginFields">
+      <label>
+        <input type="text" ng-model="user.email" class="form-control" placeholder="Email Address">
+      </label>
+    </div>
+    <a class="button button-positive button-auth" ng-click="forgotReq()" type="a">Request to Reset Password</a>
+  </div>
+
+</div><!-- /.row -->

@@ -1,3 +1,5 @@
+'use strict';
+
 angular.module('todoApp').directive('markdown', function ($sanitize) {
     var converter = new showdown.Converter();
     return {
@@ -12,5 +14,5 @@ angular.module('todoApp').directive('markdown', function ($sanitize) {
             });
             renderMarkdown();
         }
-    }
+    };
 });

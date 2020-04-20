@@ -1,3 +1,5 @@
+'use strict';
+
 angular.module('todoApp')
 .factory("Task",['$resource', 'Config', function($resource, Config){
   return $resource(Config.getAPI() + "/tasks", {},{
@@ -23,5 +25,5 @@ angular.module('todoApp')
       isArray: false,
       url: Config.getAPI() + "/tasks/:id"
     }
-  })
+  });
 }]);

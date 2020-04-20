@@ -22,7 +22,7 @@ angular.module('todoApp')
     //Redirect user to a passed in url page
     $scope.goTo = function(url){
       $window.location.href = url;
-    }
+    };
 
     //Initializing variable to not show archive notes initially
     $scope.showArchive = false;
@@ -39,15 +39,15 @@ angular.module('todoApp')
         "title": noteTitle,
         "body": noteBody,
         "token": $scope.token
-      }
+      };
       Task.create(payload,
-        function(response){
+        function(){
           //Get all tasks from server
           getTasks();
           //reset $scope.note to init values
           $scope.note = {};
           ngNotify.set("Syncing Note with the Server",'success');
-          }, function(err){
+          }, function(){
                ngNotify.set('Error, Note Could Not be Added. Please try Again Later.','error');
       });
     };
@@ -60,9 +60,9 @@ angular.module('todoApp')
         "body": noteBody,
         "token": $scope.token
       };
-      Task.update(payload,function(success){
+      Task.update(payload,function(){
         ngNotify.set('Note Updated Successfully', 'success');
-      }, function(err){
+      }, function(){
           ngNotify.set('Error Updating the Note','error');
       });
     };
@@ -74,35 +74,35 @@ angular.module('todoApp')
         "archive": noteArchive,
         "token": $scope.token
       };
-      Task.update(payload ,function(success){
+      Task.update(payload ,function(){
         ngNotify.set('Note Updated Successfully', 'success');
-      }, function(err){
+      }, function(){
           ngNotify.set('Error Updating the Note','error');
       });
-    }
+    };
 
     //Delete a specific note
     $scope.deleteNote = function(noteID){
       var payload = {
         "id": noteID,
         "token": $scope.token
-      }
+      };
       Task.delete(payload,
-        function(success){
+        function(){
           var index = $scope.todoList.map(function(e) { return e._id; }).indexOf(noteID);
           $scope.todoList.splice(index, 1);
           ngNotify.set('Note Deleted Successfully', 'success');
         },
-        function(err){
+        function(){
           ngNotify.set('Error Deleting the Note', 'error');
         });
-    }
+    };
 
     //function to return more of a nice date format
     $scope.formatDate = function(date){
       //return moment.utc(date).toDate().toString();
       return moment(date).format("dddd, MMMM Do YYYY, h:mm:ss a");
-    }
+    };
 
     //Obtain tasks from server and adding it to todolist
     function getTasks(){

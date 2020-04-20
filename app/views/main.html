@@ -18,6 +18,11 @@
       <!-- button takes user to auth page -->
       <a class="button" ng-click="goTo('#/auth')">Login/Register</a>
    </div>
+   <div class="jumbotron" ng-show="!token">
+      <h2>Forgot password?</h2>
+      <!-- button takes user to reset password page -->
+      <a class="button" ng-click="goTo('#/forgot')">Reset Password</a>
+   </div>
    <div class="row">
      <div ng-show="token">
        <div class="generic">
