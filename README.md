@@ -1,5 +1,7 @@
 # AngularJs Todo App [![Build Status](https://travis-ci.org/jaylenw/AngularJsTodoApp.svg?branch=master)](https://travis-ci.org/jaylenw/AngularJsTodoApp)
 
+Archived on 2023/11/26.
+
 This repository contains the frontend code for [Nota](https://github.com/jaylenw/nota).
 The code is designed for you to connect it to your own deployment of Nota. You may
 try out Nota that I host [here](https://nota.jaylenwimbish.com/).
